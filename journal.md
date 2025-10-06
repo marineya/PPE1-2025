@@ -26,9 +26,11 @@ Pour l'exercice 1 de la séance 1, je ne savais pas comment classer les fichiers
 
 Ensuite, durant le cours, j’ai réussi à avoir accès aux slides des professeurs. En effectuant un git clone.
 
->Pour la création du dossier PEE1_2025, je n'avais pas créé de dossier “plurital” j’ai dû en créer un et déplacer le dossier PPE1_2025 (avec les slides PPE12526) avec la commande mv, pour le déplacement.
 
-> Pour actualiser les fichiers que les professeurs ont ajoutés dans le dossier cloné, j'ai réussi à mettre à jour le dossier en utilisant la commande git status. Un nouveau fichier a été ajouté. En effectuant, les exercices, je n'ai pas eu de problèmes pour créer un nouveau dépôt sur Github. J'ai dû recommencer deux fois la création du journal.md ainsi que le clonage de mon dépôt pour mieux assimiler les commandes. Au départ, j'arrivais à synchroniser de github à mon Terminal. Toutes les modifications que je faisais sur github se mettaient à jour sur mon ordinateur. Mais je n'arrivais pas à faire l'inverse, c'est-à-dire, ajouter du texte sur mon terminal, puis mettre à jour sur github. J'ai alors essayé les commandes qu'on avait utilisé pour la création du dépôt Git-along. J'avais enregistré au préalable toutes les manipulations sur mon terminal afin de les retrouver. Je me suis alors basé sur l'enregistrement de git-along. En cours, nous avions effectué la commande echo pour git-along. J'ai alors utilisé la même commande pour voir comment fonctionne l'ajout de texte. J'ai essayé echo "Une modification ", >> journal.md, j'ai pu voir que le texte "la modification" à été ajouté alors dans le fichier journal.md
+##Travail à faire pour mercredi 8 octobre 
+Pour la création du dossier PEE1_2025, je n'avais pas créé de dossier “plurital” j’ai dû en créer un et déplacer le dossier PPE1_2025 (avec les slides PPE12526) avec la commande mv, pour le déplacement.
+
+Pour actualiser les fichiers que les professeurs ont ajoutés dans le dossier cloné, j'ai réussi à mettre à jour le dossier en utilisant la commande git status. Un nouveau fichier a été ajouté. En effectuant, les exercices, je n'ai pas eu de problèmes pour créer un nouveau dépôt sur Github. J'ai dû recommencer deux fois la création du journal.md ainsi que le clonage de mon dépôt pour mieux assimiler les commandes. Au départ, j'arrivais à synchroniser de github à mon Terminal. Toutes les modifications que je faisais sur github se mettaient à jour sur mon ordinateur. Mais je n'arrivais pas à faire l'inverse, c'est-à-dire, ajouter du texte sur mon terminal, puis mettre à jour sur github. J'ai alors essayé les commandes qu'on avait utilisé pour la création du dépôt Git-along. J'avais enregistré au préalable toutes les manipulations sur mon terminal afin de les retrouver. Je me suis alors basé sur l'enregistrement de git-along. En cours, nous avions effectué la commande echo pour git-along. J'ai alors utilisé la même commande pour voir comment fonctionne l'ajout de texte. J'ai essayé echo "Une modification ", >> journal.md, j'ai pu voir que le texte "la modification" à été ajouté alors dans le fichier journal.md
 
 >Maintenant, pour ajouter mon texte sur le fichier journal.md :
 D'abord, j'ai effectué un brouillon sur le dossier git-along. J'ai effectué toutes les commandes du diaporama pour le travail d'un dépot git.
@@ -48,6 +50,8 @@ echo “j’ai écrit le texte ici “ >> README.md
 
 Nous avons déjà utilisé la commande echo en cours, lors de la modification sur le dossier git-along.
 
+git add journal.md 
+
 git commit -m “modification” 
 (pour enregistrer les changements)
 
@@ -63,3 +67,4 @@ git push
 Bien sûr, on vérifie bien en amont qu’on est placé dans le bon chemin pour modifier notre fichier. On vérifie bien avec la commande “ls” pour voir les fichiers qui apparaissent.
 
 Il m'a fallu beaucoup de manipulations pour comprendre quelques commandes et pourquoi lorsque je faisais git commit ça ne marchait pas au départ lorsque je suivais le scénario répétitif sur le diaporama.
+Marine Yang M& TAL
