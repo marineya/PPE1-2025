@@ -16,7 +16,7 @@ C'est sur l'ordinateur, sur un terminal, mais on devra l'utiliser pour le tri du
 
 - Pour l’exercice, j’ai tapé la commande mkdir exercice1 pour créer un fichier. Cependant, comme rien ne s’affichait, je pensais qu’il n'avait pas été créé, alors j’ai utilisé la commande sudo en plus, mais cela m'affichait qu’il était impossible de créer, car le fichier existe déjà. Pour le voir, j’ai tapé la commande ls -1 pour afficher tous les fichiers.
 
-#### Commande "unzip" : réussi
+#### Commande "unzip" : réussie
 - J’ai réussi à décompresser le fichier zip. J'ai tapé "man unzip" pour afficher en détail la commande "unzip". Puis, j'ai obtenu pleins de fichiers différents (txt, jpeg, etc...).
 	Au départ, je n’avais pas compris toutes les commandes et ni les différents chemins, mais en appliquant l’exercice, j’ai mieux assimilé leur fonctionnement et leur rôle sur le terminal.
 
@@ -56,8 +56,7 @@ Maintenant, après avoir manipulé sur le brouillon, j'ai fait les exercices sur
 - Sur le terminal, j’ai effectué les commandes suivantes : 
 1. "cat README.md"
 2. "git pull"
-3. (J’ai utilisé la commande "echo" que nous avions effectué en séance 2)
-	"echo “j’ai écrit le texte ici “ >> journal.md"
+3. "echo “j’ai écrit le texte ici “ >> journal.md" (J’ai utilisé la commande "echo" que nous avions effectué en séance 2)
 4. "git add journal.md" 
 5. "git commit -m “enreg séance 1” "
 6. "git push" (Pour synchroniser et mettre à jour sur le dépôt)
@@ -68,7 +67,9 @@ A l’inverse, si je veux modifier mon fichier "journal.md" à partir de Gedit, 
 2. "git add journal.md"
 3. "git commit -m “enreg séance 1”"
 4. "git push"
-![alt text](Documents/images/terminal-synchronisation.jpg " Synchronisation sur Terminal)
+
+
+![alt text](Documents/images/terminal-synchronisation.jpg "Synchronisation sur Terminal")
 
 Bien sûr, on vérifie bien en amont qu’on est placé dans le bon chemin pour modifier notre fichier ( avec la commande cd ~/...). Puis, on vérifie bien avec la commande “ls” pour voir les fichiers qui apparaissent dans le dossier.
 
