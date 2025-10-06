@@ -63,7 +63,7 @@ Maintenant, après avoir manipulé sur le brouillon, j'ai fait les exercices sur
 6. "git push" (Pour synchroniser et mettre à jour sur le dépôt)
  
  
-![Synchronisation sur Terminal](Documents/images/terminal-synchronisation.png "Synchronisation sur Terminal")
+![Synchronisation sur Terminal](terminal-synchronisation.png)
  
 ### Modifier mon fichier journal.md à partir de Gedit : 
 A l’inverse, si je veux modifier mon fichier "journal.md" à partir de Gedit, j'effectue les commandes suivantes : 
