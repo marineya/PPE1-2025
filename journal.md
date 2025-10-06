@@ -35,11 +35,11 @@ D'abord, j'ai effectué un brouillon sur le dossier git-along. J'ai effectué to
 
 J'ai tenté de comprendre davantage la commande git commit en essayant sur le dossier git-along, fichier README.md. EN effectuant la commande, j’ai compris qu’elle affichait toutes les sauvegardes et qu'elle permettait de retrouver les anciennes modifications effectuées.
 
->Ensuite, pour commencer, j’ai d’abord essayé de faire des modifications du fichier README.md sur le terminal. J’ai effectué les commandes suivantes : 
+Ensuite, pour commencer, j’ai d’abord essayé de faire des modifications du fichier README.md sur le terminal. J’ai effectué les commandes suivantes : 
 cat README.md 
 (pour afficher le contenu de mon fichier README.md)
 
->J’ai suivi le scénario démontré dans le diapo
+J’ai suivi le scénario démontré dans le diapo
 rama avec : 
 git pull
 
