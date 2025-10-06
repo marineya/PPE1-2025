@@ -69,7 +69,7 @@ A l’inverse, si je veux modifier mon fichier "journal.md" à partir de Gedit, 
 4. "git push"
 
 
-![alt text](Documents/images/terminal-synchronisation.jpg "Synchronisation sur Terminal")
+![Synchronisation](Documents/images/terminal-synchronisation.jpg "Synchronisation sur Terminal")
 
 Bien sûr, on vérifie bien en amont qu’on est placé dans le bon chemin pour modifier notre fichier ( avec la commande cd ~/...). Puis, on vérifie bien avec la commande “ls” pour voir les fichiers qui apparaissent dans le dossier.
 
