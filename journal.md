@@ -54,7 +54,7 @@ Maintenant, après avoir manipulé sur le brouillon, j'ai fait les exercices sur
 
 ### Modifier mon fichier journal.md à partir du terminal : 
 - Sur le terminal, j’ai effectué les commandes suivantes : 
-1. "cat README.md"
+1. "cat journal.md"
 2. "git pull"
 3. "echo “j’ai écrit le texte ici “ >> journal.md" (J’ai utilisé la commande "echo" que nous avions effectué en séance 2)
 4. "git add journal.md" 
@@ -71,7 +71,7 @@ A l’inverse, si je veux modifier mon fichier "journal.md" à partir de Gedit, 
 Bien sûr, on vérifie bien en amont qu’on est placé dans le bon chemin pour modifier notre fichier ( avec la commande cd ~/...). Puis, on vérifie bien avec la commande “ls” pour voir les fichiers qui apparaissent dans le dossier.
 
 - Sur Gedit, j'ai également ajouté plusieurs sous-sections avec le "#" pour le travail.
-En lançant la commande "git status" comme demandé dans l'exercice, git ne semble pas avoir mis à jour le texte que j'ai ajouté. Il a indiqué deux commandes à utiliser. J'ai alors utilisé la commande "git add journal.md", et effectué à la suite le scénario qui se répète (dans le diaporama).
+En lançant la commande "git status" comme demandé dans l'exercice, git ne semble pas avoir mis à jour le texte que j'ai ajouté. Il a indiqué deux commandes à utiliser. J'ai alors effectué la commande "git add journal.md", et effectué à la suite le scénario qui se répète (dans le diaporama). Donc, il faudrait utiliser la commande "git add journal.md" pour ajouter nos modifications à notre dépôt.
 
 #### Constat : 
 Il m'a fallu beaucoup de manipulations pour comprendre quelques commandes et pourquoi lorsque j'utilisais la commande "git commit" ça ne marchait pas au départ, lorsque je suivais le scénario répétitif du diaporama.
