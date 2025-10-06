@@ -2,7 +2,7 @@
 
 *Séance 1 : 24/09/2025*
 
-- Instalation de GITHUB, GITLAB : réussi
+- Installation de GITHUB, GITLAB : réussi
 
 - Notion non comprise : je n'ai pas compris les pipelines Unix. 
 C'est sur l'ordinateur, sur un terminal, mais on devra l'utiliser pour le tri du mot de chaque langue (notre corpus) ? 
@@ -17,7 +17,7 @@ C'est sur l'ordinateur, sur un terminal, mais on devra l'utiliser pour le tri du
 - Pour l’exercice, j’ai tapé la commande mkdir exercice1 pour créer un fichier. Cependant, comme rien ne s’affichait, je pensais qu’il n'avait pas été créé, alors j’ai utilisé la commande sudo en plus, mais cela m'affichait qu’il était impossible de créer, car le fichier existe déjà. Pour le voir, j’ai tapé la commande ls -1 pour afficher tous les fichiers.
 
 #### Commande "unzip" : réussie
-- J’ai réussi à décompresser le fichier zip. J'ai tapé "man unzip" pour afficher en détail la commande "unzip". Puis, j'ai obtenu pleins de fichiers différents (txt, jpeg, etc...).
+- J’ai réussi à décompresser le fichier zip. J'ai tapé "man unzip" pour afficher en détail la commande "unzip". Puis, j'ai obtenu plein de fichiers différents (txt, jpeg, etc...).
 	Au départ, je n’avais pas compris toutes les commandes et ni les différents chemins, mais en appliquant l’exercice, j’ai mieux assimilé leur fonctionnement et leur rôle sur le terminal.
 
 - Lors de la correction effectuée en séance 2 : 
@@ -28,11 +28,11 @@ Lorsque je faisais les manipulations en suivant la correction en cours, je n’a
 
 *Séance 2, 1er octobre :*
 - Durant le cours, j'ai réussi à avoir accès aux slides des professeurs en effectuant un git clone.
-- Nous avons également créé un nouveau dépot sur Github et fait des modifications sur le fichier README.md.
+- Nous avons également créé un nouveau dépôt sur Github et fait des modifications sur le fichier README.md.
 - Ensuite, nous avons créé un tag pour finaliser.
 
 ## Travail à faire pour mercredi 8 octobre :
-- Sur le terminal, j'ai actualisé le dossier des diaporama que nous avions clonné lors de la séance 2 en cours. Un document a été bien ajouté, il s'agissait d'un fichier pdf avec les exercices à faire.
+- Sur le terminal, j'ai actualisé le dossier des diaporamas que nous avions cloné lors de la séance 2 en cours. Un document a été bien ajouté, il s'agissait d'un fichier pdf avec les exercices à faire.
 
 - Pour la création du dossier "PEE1_2025", je n'avais pas créé de dossier “plurital” j’ai dû en créer un et déplacer le dossier "PPE1_2025" (avec les slides PPE12526) avec la commande mv.
 
@@ -47,7 +47,7 @@ Les modifications que je faisais sur Github dans le fichier "README.md" fonction
 #### Constat : 
 J'ai tenté de comprendre davantage la commande "git commit" en essayant sur le fichier "README.md". En effectuant la commande, j’ai compris qu’elle affichait toutes les sauvegardes et qu'elle permettait de retrouver les anciennes modifications effectuées. On peut d'ailleurs retrouver toutes nos modifications sur Github.
 
-### Exercice 2.c synchroniser vers le dépot : Modifier le fichier "journal.md" sur votre machine : 
+### Exercice 2.c synchroniser vers le dépôt : Modifier le fichier "journal.md" sur votre machine : 
 
 Maintenant, après avoir manipulé sur le brouillon, j'ai fait les exercices sur le fichier "journal.md".
 - Pour ajouter mon texte sur le fichier, j'ai effectué les commandes (du diaporama pour le travail d'un dépot git) que j'avais aussi effectué dans le fichier README.md (brouillon).
