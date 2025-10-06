@@ -1,10 +1,10 @@
-#Journal de bord du projet encadré
+# Journal de bord du projet encadré
 
 *Séance 1 : 24/09/2025*
 
->Instalation de GITHUB, GITLAB : ok 
+> Instalation de GITHUB, GITLAB : ok 
 
->Notion non comprise : je n'ai pas compris les pipelines Unix. 
+> Notion non comprise : je n'ai pas compris les pipelines Unix. 
 C'est sur l'ordinateur, sur un terminal, mais on devra l'utiliser pour le tri du mot de chaque langue (notre corpus) ? 
 
 
@@ -18,13 +18,13 @@ Pour l’exercice, j’ai tapé la commande mkdir exercice1 pour créer un fichi
 
 J’ai ensuite suivi les instructions et en arrivant à la commande unzip, j’ai tapé man unzip pour afficher en détail la commande unzip pour ainsi l’utiliser avec lequel j’ai réussi à décompresser l’archive, j’ai alors obtenu plein d’informations sur des villes, années, des fichiers txt, jpeg, etc
 
-#### constat : 
+#### Constat : 
 Au départ, je n’avais pas compris toutes les commandes et ni les différents chemins, mais en appliquant l’exercice, j’ai mieux assimilé leur fonctionnement et leur rôle sur le terminal.
 
 
 *Séance 2 :*
 
-#### retour sur la séance 1 : déplacement de fichiers txt, png etc, : 
+#### Retour sur la séance 1 : déplacement de fichiers txt, png etc, : 
 Pour l'exercice 1 de la séance 1, je ne savais pas comment classer les fichiers dans le bon dossier correspondant.
 
 Lorsque je faisais les manipulations en suivant la correction, je n’avais pas bien placé les fichiers 2016 dans le bon dossier. Au lieu de les déplacer dans le dossier 2016, je les ai mis dans le dossier  exercice1>txt et je ne les ai pas mis dans le dossier 2016 qui se trouve dans le dossier txt. En le refaisant à la maison, j’ai mieux assimilé les commandes et les chemins ../ ,  ./,
@@ -42,14 +42,14 @@ Avant de faire l'exercice sur le journal.md, j'ai effectué toutes les commandes
 
 J'ai réussi à synchroniser le fichier README.md de Github à mon Terminal. Toutes les modifications que je faisais sur Github se mettaient à jour sur mon ordinateur. Mais je n'arrivais pas à faire l'inverse. J'ai alors essayé les commandes qu'on avait utilisé pour la création du dépôt Git-along. J'avais enregistré au préalable toutes les commandes de mon terminal dans un dossier afin de les retrouver. Je me suis alors basé sur les commandes utilisées en cours pour git-along, notamment celle de "echo".
 
-AInsi, ayant bien compris le fonctionnemet de toutes les commandes avec plusieurs manipulations, je suis passé sur le fichier "journal.md".
+Ainsi, ayant bien compris le fonctionnemet de toutes les commandes avec plusieurs manipulations, je suis passé sur le fichier "journal.md".
 
-####constat : 
+#### Constat : 
 J'ai tenté de comprendre davantage la commande git commit en essayant sur le dossier git-along, fichier README.md. En effectuant la commande, j’ai compris qu’elle affichait toutes les sauvegardes et qu'elle permettait de retrouver les anciennes modifications effectuées. On peut d'ailleurs toutes les retrouver sur Github.
 
-###exercice 2.c synchroniser vers le dépot : Modifier le fichier "journal.md" sur votre machine : 
+### Exercice 2.c synchroniser vers le dépot : Modifier le fichier "journal.md" sur votre machine : 
 
-Maintenant, pour ajouter mon texte sur le fichier journal.md. J'ai effectué toutes les commandes du diaporama pour le travail d'un dépot git.
+Maintenant, pour ajouter mon texte sur le fichier "journal.md". J'ai effectué toutes les commandes du diaporama pour le travail d'un dépot git.
 Sur le terminal, j’ai effectué les commandes suivantes : 
 "cat README.md"
  
@@ -74,6 +74,8 @@ A l’inverse, si je veux modifier mon fichier "journal.md" à partir de Gedit, 
 
 Bien sûr, on vérifie bien en amont qu’on est placé dans le bon chemin pour modifier notre fichier. On vérifie bien avec la commande “ls” pour voir les fichiers qui apparaissent.
 
+J'ai également ajouté plusieurs sous-sections avec le "#" pour le travail.
+En lançant la commande "git status" comme demandé dans l'exercice, git ne semble pas avoir mis à jour le texte que j'ai ajouté. COmme il a indiqué, j'ai alors utilisé la commande git add journal.md et effectuée à la suite le scénario qui se répète dans le diaporama.
 
 #### Constat : 
 Il m'a fallu beaucoup de manipulations pour comprendre quelques commandes et pourquoi lorsque j'utilisais la commande "git commit" ça ne marchait pas au départ, lorsque je suivais le scénario répétitif du diaporama.
