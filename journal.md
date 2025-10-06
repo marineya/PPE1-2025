@@ -64,7 +64,7 @@ Bien sûr, on vérifie bien en amont qu’on est placé dans le bon chemin pour 
 
 > Il m'a fallu beaucoup de manipulations pour comprendre quelques commandes et pourquoi lorsque je faisais git commit ça ne marchait pas au départ lorsque je suivais le scénario répétitif sur le diaporama.
 
-! [alt text] (terminal synchronisation.png)
+! [alt text] (/Documents/images/synchronisation.png)
 
 
 
