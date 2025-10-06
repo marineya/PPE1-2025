@@ -68,9 +68,6 @@ A l’inverse, si je veux modifier mon fichier "journal.md" à partir de Gedit, 
 3. "git commit -m “enreg séance 1”"
 4. "git push"
 
-
-![Synchronisation](Documents/images/terminal-synchronisation.jpg "Synchronisation sur Terminal")
-
 Bien sûr, on vérifie bien en amont qu’on est placé dans le bon chemin pour modifier notre fichier ( avec la commande cd ~/...). Puis, on vérifie bien avec la commande “ls” pour voir les fichiers qui apparaissent dans le dossier.
 
 - Sur Gedit, j'ai également ajouté plusieurs sous-sections avec le "#" pour le travail.
