@@ -62,6 +62,9 @@ Maintenant, après avoir manipulé sur le brouillon, j'ai fait les exercices sur
 5. "git commit -m “enreg séance 1” "
 6. "git push" (Pour synchroniser et mettre à jour sur le dépôt)
  
+ 
+![Synchronisation sur Terminal](Documents/images/terminal-synchronisation.png "Synchronisation sur Terminal")
+ 
 ### Modifier mon fichier journal.md à partir de Gedit : 
 A l’inverse, si je veux modifier mon fichier "journal.md" à partir de Gedit, j'effectue les commandes suivantes : 
 1. "git pull"
