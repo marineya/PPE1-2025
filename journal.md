@@ -78,4 +78,51 @@ En lançant la commande "git status" comme demandé dans l'exercice, git ne semb
 #### Constat : 
 Il m'a fallu beaucoup de manipulations pour comprendre quelques commandes et pourquoi lorsque j'utilisais la commande "git commit" ça ne marchait pas au départ, lorsque je suivais le scénario répétitif du diaporama.
 
-Marine Yang M1 TAL
+
+
+
+
+*séance 3*
+Pour afficher le nombre de lignes :
+
+Pour cela, j'ai effectué la commande cat 2016/* | wc _l pour chaque année, ainsi que cat 2016/* | grep Location | wc _l, afin de rechercher les lignes contentant le mot Location.
+J'ai ajouté la commande echo avec des chevrons pour les excetuer sur le fichier sh sur Kate.
+
+
+J'ai mieux compris la notion de pipeline (notion non comprise en séance 1)
+
+
+En terminant l'exercice 1, j'ai relu l'ensemble des consignes. Je me suis aperçu que j'avais fais tout exécuté sur le terminal plutôt que sur le fichier sh. Je suis alors répartie sur le fichier sh pour ajouter les commandes, comme on avait vu en classe.
+
+J'ai réussi à faire lancer les comandes à partir du fichier sh et les résultats se sont affichés pour la commande echo et la commande d'affichage cat.
+
+
+En affichant les resutlats, je ne sais pas si c'était normal que ça affiche les resutlats tout ensemble ou si c'était normal. Il imprimait sur mon fichier sh tout les résultats ensemble plutôt que de s'afficher pour chaque année.
+J'ai alors modifié manuellement sur le fichier sh en attribuent les résultats à l'année correspondante.
+
+photo
+
+
+D'ailleurs, j'ai du refaire les manipulations, car je m'étais trompée de fichier. J'ai choisi les fichiers txt au lieu des fichier ann.
+
+
+
+
+
+Pour l'exercice 2, cela a été un peu complexe.
+
+Pour créer un script, j'ai tapé la commande Kate compte-par-type.sh. j'ai alors eu un fichier qui est apparu sur Kate. J'ai écris dessus les commandes :
+
+
+Puis, je tape les commandes sur le temrinal pour afficher les résultats :
+
+
+Lors de la séance dernière,  je n'avais pas compris l'attribution des variables. J'ai essayé de les attribuer pour les entités données :
+
+Photo
+
+
+
+Puis, j'ai essayé plusieurs manipulation comme ce qu'on avait fait en cours pour tenter de comprendre :
+Ici, j'ai repris l'exemple du l'exercice 1. Il semble afficher tous les résultats du nombre de lignes contenant le mot Organisation, Person, Date, et Location :
+
