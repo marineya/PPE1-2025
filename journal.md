@@ -82,7 +82,7 @@ Il m'a fallu beaucoup de manipulations pour comprendre quelques commandes et pou
 
 
 
-*séance 3*
+*séance 3 : 8.10 *
 Pour afficher le nombre de lignes :
 
 Pour cela, j'ai effectué la commande cat 2016/* | wc _l pour chaque année, ainsi que cat 2016/* | grep Location | wc _l, afin de rechercher les lignes contentant le mot Location.
@@ -100,7 +100,7 @@ J'ai réussi à faire lancer les comandes à partir du fichier sh et les résult
 En affichant les resutlats, je ne sais pas si c'était normal que ça affiche les resutlats tout ensemble ou si c'était normal. Il imprimait sur mon fichier sh tout les résultats ensemble plutôt que de s'afficher pour chaque année.
 J'ai alors modifié manuellement sur le fichier sh en attribuent les résultats à l'année correspondante.
 
-photo
+image 1
 
 
 D'ailleurs, j'ai du refaire les manipulations, car je m'étais trompée de fichier. J'ai choisi les fichiers txt au lieu des fichier ann.
@@ -115,14 +115,29 @@ Pour créer un script, j'ai tapé la commande Kate compte-par-type.sh. j'ai alor
 
 
 Puis, je tape les commandes sur le temrinal pour afficher les résultats :
+image 2
 
-
-Lors de la séance dernière,  je n'avais pas compris l'attribution des variables. J'ai essayé de les attribuer pour les entités données :
-
-Photo
-
-
+Lors de la séance dernière,  je n'avais pas compris l'attribution des variables. J'ai essayé de les attribuer pour les entités données.
 
 Puis, j'ai essayé plusieurs manipulation comme ce qu'on avait fait en cours pour tenter de comprendre :
 Ici, j'ai repris l'exemple du l'exercice 1. Il semble afficher tous les résultats du nombre de lignes contenant le mot Organisation, Person, Date, et Location :
+
+image 3
+
+
+
+
+*séance 4 : 15.10*
+# Exercice 1 de la fiche avec modification :
+J’ai refais en essayant de suivre la correction et en continuant à la maison.
+EN refaisant, je me suis trompée de fichier, je suis restée sur les fichiers txt plutôt que ceux des fichiers “ann”. J’ai alors, recommencée :
+cette fois, j’ai fais sur terminal : kate compte.sh
+sur la page, j’ai ajouté les éléments dont :
+image 4
+
+J’ai ouvert le terminal en dessous du fichier, puis j’ai fait la commande chmod +xcompte.sh. ENsuite, “pwd”, pour afficher le chemin où on se situe, ainsi que cd /tmp/. Enfin, bash (on copie le chemin de pwd et les résultats se sont affichés :
+image 5
+
+
+
 
