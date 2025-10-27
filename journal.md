@@ -141,3 +141,189 @@ image 5
 
 
 
+
+
+
+Journal de bord Exercices mini projet :
+
+Exercice 1
+Question 1)
+ “cat” est la commande qui permet d’afficher tout le contenu. Je pense qu’il va juste afficher le contenu mais et va passer dans un autre tube, c’est-à-dire un autre pipeline (d'où le | ), il va l’afficher mais après ne va pas prendre en compte la condition ou ce qui a été affiché.
+
+Question 2)
+Je me base à partir du code qu’on avait corrigé  (cf exo 4).
+D’abord, on teste ce qu’on va obtenir avec ce code ;
+while read -r line;
+do
+    echo ${line};
+done < "urls/fr.txt";
+
+ça nous indique : ./testminiprojet.sh: line 6: urls/fr.txt: No such file or directory.
+
+ALors, pour le transformer en paramètre de script, il faudrait lui attribuer une valeur  en lui donnant un argument. Mais avant d’avoir réussi, j’ai d’abord fait ceci :
+
+
+#!/bin/bash
+
+line="/home/marine/Documents/Plurital/git-along/urls/testfr.txt
+echo "le fichier est: $line"
+
+if [-f /urls ]; then
+echo "URLS valide"
+fi
+OK=0
+NOK=0
+while read -r line;
+do
+echo "$line"
+if [[ $line=~ ^https?://
+then
+echo "c'est une URL valide" OK=$(expr $0K + 1)
+else
+echo "ce n'est pas une URL valide"
+NOK=$(expr $NOK + 1
+fi
+
+done < "$line"
+
+echo "$OK URLS et $NOK lignes douteuses”
+
+En effectuant ce code qui ne demandait pas si les urls étaient valides ou non, cela m’a permis de comprendre davantage certains codes.
+Pour répondre à la question 2, j’ai obtenu :
+#!/bin/bash
+
+line="/home/marine/Documents/Plurital/git-along/urls/testfr.txt"
+echo "le fichier est : $line"
+while read -r line;
+do
+    echo ${line};
+done <"$line"
+
+Ce programme m’affiche alors le fichier est : avec le chemin, ainsi que toutes les urls du fichier.
+
+
+Question 3)
+Au départ, j’ai ajouté dans le script : wc ../urls/testfr.txt
+Lorsque je l’ai exécuté sur le terminal, j’ai obtenu les informations sur le fichier tels que le nombre de mots, de lignes.
+
+J’ai ensuite essayé de noter :
+cat ../urls/testfr*.txt | grep -n https | cut -f2 | trail -n 10
+
+J’ai tenté d’ajouter ce code ici : dans la boucle while :  cat ../urls/testfr*.txt | grep -n https
+mais quand je tape ceci, évidemment la boucle se répète donc j’ai la boucle qui est répétée.
+
+Comme on sait qu’on doit afficher des données, j’ai regardé avec la commande “cat”, car on sait qu' avec cette commande on a pu afficher avec la pipe wc les nombre de lignes, de mots, de caractères. Donc on applique : “man cat “. On obtient plusieurs options dont : -n, --number number all output lines.
+ALors j’ai ajouté echo cat -n ${line} dans le script. J’obtenais alors cat -n avec les urls, sur le terminal.
+Je me suis aperçu qu’il ne fallait pas le placer dans la commande “echo”. J’ai alors déplacé la commande “cat”. Ce qui m’a donné :
+
+
+#!/bin/bash
+line="/home/marine/Documents/Plurital/git-along/urls/testfr.txt"
+echo "le fichier est: $line"
+while read -r line;
+do
+cat -n
+echo ${line};
+done < “$line”
+
+
+Ensuite, on a vu en cours que les commandes -n et -i pr avoir les options d’entête
+j’ai visité le site pour plus d’informations : https://www.laulem.com/dev/bash-memo.html
+
+Au début, j’ai essayé la boucle for ajouté au dessu de while, mais ensuite je n’avais pas besoin de faire avec for (en m’aidant des diaporama) :
+#!/bin/bash
+
+line="/home/marine/Documents/Plurital/git-along/urls/testfr.txt"
+echo "le fichier est : $line"
+
+N=0
+for LINE in 1 2 3 4 5 6 7 8 9 10
+do
+    N=$(expr $N + 1)
+done
+
+    while read -r line;
+do
+    echo -e "$N \t" ${line};
+done <"$line"
+
+
+REUSSITE  : Ensuite, en lisant le programme, j’ai simplement mis le tout dans while :
+#!/bin/bash
+
+line="/home/marine/Documents/Plurital/git-along/urls/testfr.txt"
+echo "le fichier est : $line"
+
+N=1
+	while read -r line;
+do
+	echo -e "$N \t" ${line};
+	N=$(expr $N + 1)
+done <"$line"
+
+
+
+
+
+Exercice 2 :
+De ce que j'ai suivis en cours, curl -i est un entête qui s’affiche avant la réponse qu’on avait avant (le code html en réponse).
+Au début j’ai fais la commande curl -i mais, il affichait des balises et tout le contenu de l’url.
+
+En regardant dans les diapo et dans le cours, la commande curl -I permet de donner les informations essentielles sur la page html, sans afficher tout son contenu.
+Donc, nous on a besoin pour afficher le code, on a vu en cours les différents types de code comme par exemple 404, 200 etc….
+J’ajoute au programme :    curl -I $line
+Ce qui donne :
+#!/bin/bash
+
+line="/home/marine/Documents/Plurital/git-along/urls/testfr.txt"
+echo "le fichier est : $line"
+
+N=1
+    while read -r line;
+do
+    echo -e "$N \t" ${line};
+    N=$(expr $N + 1)
+    curl -I $line
+
+done <"$line"
+
+
+Le terminal affiche pour chaque url le code HTTP/code, date, server, contente-type etc…
+POur chaque urls, on a :
+HTTP/200
+HTTP/2 200
+HTTP/1.1 301 Moved Permanently
+HTTP/2 200
+HTTP/2 200
+curl: (60) SSL certificate problem: certificate has expired
+More details here: https://curl.se/docs/sslcerts.html
+HTTP/2 404
+HTTP/2 200
+HTTP/2 200
+HTTP/2 200
+
+
+J’ai fait la commande man curl pour essayer de voir si je peux seulement afficher les code.
+Avec la commande curl -h => j’obtien ce code :
+#!/bin/bash
+
+line="/home/marine/Documents/Plurital/git-along/urls/testfr.txt"
+echo "le fichier est : $line"
+
+N=1
+    while read -r line;
+do
+    echo -e "$N \t" ${line}; curl -s -o ;  wc -w;
+    N=$(expr $N + 1)
+
+done <"$line"
+
+
+Le probleme c’est que je voudrais que ça fasse pour chaque url.
+
+
+
+
+
+
+
