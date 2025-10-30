@@ -23,7 +23,31 @@ C'est sur l'ordinateur, sur un terminal, mais on devra l'utiliser pour le tri du
 - Lors de la correction effectuée en séance 2 : 
 	Pour l'exercice 1 de la séance 1, je n'ai pas réussi à bien classer les fichiers dans le bon dossier correspondant.
 
-Lorsque je faisais les manipulations en suivant la correction en cours, je n’avais pas bien placé les fichiers 2016 dans le bon dossier. Au lieu de les déplacer dans le dossier "2016", je les ai mis dans les dossiers  "exercice1", puis dans "txt". Je ne les ai pas mis dans le dossier "2016" qui se trouvait dans le dossier "txt". J'étais un peu perdue pendant le cours, mais en le refaisant à la maison, j’ai mieux assimilé les commandes et les chemins ../ ,  ./,
+Lorsque je faisais les manipulations en suivant la correction en cours, je n’avais pas bien placé les fichiers 2016 dans le bon dossier. Au lieu de les déplacer dans le dossier "2016", je les ai mis dans les dossiers  "exercice1", puis dans "txt". Je ne les ai pas mis dans le dossier "2016" qui se trouvait dans le dossier "txt". J'étais un peu perdue pendant le cours, mais en le refaisant à la maison, j’ai mieux assimilé les commandes et les chemins ../ ,  ./.
+
+**Les commandes effectuées pour le déplacement des fichiers :**
+Pour déplacer mes fichiers :
+ls txt
+Il affiche les dossiers 2016,2017,2018 dossier txt que jai.
+
+ls*txt il affichera seulement tous les fichiers dont le format est txt.
+
+J'ai fais la commande mkdir pour créer le dossier auquels je crée dedans les dossiers qui contiennent les années 2016 2017 et 2018 : mkdir 2016 2017 2018 Ainsi, au sein des dossiers nommés par année, je crée des dossiers pour les mois 01 02 03 ect…
+
+Ensuite,je fais la commande :
+mv *txt* txt/(pour tous les fichiers txt je les deplace dans le dossier txt)
+
+mv *2016* 2016/(je déplace tous les fichiers 2016 dans le dossier 2016.
+
+Mv *2016_01* 01/
+(Je déplace les fichiers 2016 dont le mois est 01 dans le dossier 01)
+
+Avant de déplacer les fichiers, je m'assure d'être dans le bon dossier sinon ça affichera que les fichiers ne seront pas trouvés.
+
+
+mv *2016_01* (pour tous les fichiers txt dont le mois est 01 (janvier))
+
+Je fais également la même chose pour les autres fichiers ann, images.
 
 
 ## SEANCE 2 : 01/10
