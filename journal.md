@@ -30,7 +30,7 @@ Pour déplacer mes fichiers :
 ls txt
 Il affiche les dossiers 2016,2017,2018 dossier txt que jai.
 
-ls*txt il affichera seulement tous les fichiers dont le format est txt.
+ls *txt il affichera seulement tous les fichiers dont le format est txt.
 
 J'ai fais la commande mkdir pour créer le dossier auquels je crée dedans les dossiers qui contiennent les années 2016 2017 et 2018 : mkdir 2016 2017 2018 Ainsi, au sein des dossiers nommés par année, je crée des dossiers pour les mois 01 02 03 ect…
 
@@ -130,10 +130,6 @@ Les résultats se sont bien affichés sur le terminal.
 
 
 ## Séance 5 : 22/10
-
-
-## SÉANCE 5 : 22/10
-
 
 
 
@@ -341,3 +337,149 @@ atgAqgM19mmKv9sPyrEBBYl2b4f7bF_aem_iDj8FgjwAgPTtCjbyeqpbA)
 Lundi, j'ai terminé les exercices (sans créer le git tag). Pendant les deux jours suivant, j'ai quand même essayé de comprendr epourquoi les infrlations ne voualient pas s'aligner dans mon tableau tsv. Mais, je n'ai pas réussi malgré les modifications approtés au programme.
 Ensuite, lorsque j'ai ajouté le git tag **"miniprojet-1-1"**, il n'a pas pris en compte les modifications effectués durant ces deux jours. Il n'a tenu compte de seulement les exercices que j'avais fait lundi (voir les anciens commit "journal à jour" dans le fichier journal.md et le commit "hh" du fichier miniprojet.sh).
 J'ai dû recréer un git tag (voir le tag **"miniprojet--1"**) et faire un git add du dossier miniprojet afin de mettre à jour les modifications. J'ai ensuite supprimé l'ancien tag miniprojet-1-1, pour éviter toute confusion.
+
+
+
+
+
+## Miniprojet 2
+Correction : code pour vérifier qu’on ai des arguments :
+J’ai écris le chemin du fichier sur le terminal avec la commande : ./revue.sh /home/marine/Documents/Plurital/gital/PPE1-2025/miniprojet/urls/fr.txt
+j’obtiens le code suivant (voir fichier revue.sh) :
+
+> if [ $# -ne 1 ] #on vérifie qu'il y ait des arguments
+>then
+>        echo "Le script attend exactement un argument : le chemin vers le fichier d'URL"
+>           exit
+fi
+FICHIER_URLS=$1
+
+lineno=1
+while read -r line;
+do
+            echo ${lineno} ${line};
+done < "$FICHIER_URLS";
+
+Ensuite, dans un autre fichier sh, je fais un code qui va vérifier que les urls sont valides (voir fichier verifurls.sh)
+j’obtiens le code suivant :
+FICHIER_URLS=$1
+lineno=1
+OK=0
+NOK=0
+num=0
+
+while read -r LINE;
+do
+    num=$((num + 1))
+    echo "url : $num $LINE "
+    if [[ $LINE =~ ^https?:// ]]
+    then
+        echo "ressemble à une URL valide"
+        OK=$(expr $OK + 1)
+    else
+        echo "ne resemble pas à une URL valide"
+        NOK=$(expr $NOK + 1)
+    fi
+done < $FICHIER_URLS
+echo "$OK URLS et $NOK lignes douteuses"
+
+
+afficher  code http, encodage, nombre de mots :
+commande effectuée : curl -I -L -s -w "%{content_type}\n%{http_code}\n" -o /dev/null https://fr.wikipedia.org
+
+explications de la commande :
+curl : affiche sur le terminal, pour récupérer une page web, elle permet de récupérer des métadonnées sur la page web pour savoir si elle est valide ⇒ quel encodage avoir etc.
+-I : équivalent à l’option “head” on ne veut garder que les premières entêtes, sans afficher le contenu de la page.
+-L suit les directions
+-w = demande a curl a afficher info sur la sortie standard = ça  donne aussi des élément qu’on peut afficher, et que possible de séparer valeur par \t .
+content_type : le type de charset.
+-o /dev/null : n’affiche pas le contenu du html. En sortie : suppression. -o indique un fichier en sortie.
+On ajoute ainsi l’url qu’on veut tester.
+
+>TEST : On obtient pour les urls :
+https://fr.wikipedia.org/wiki/Robot
+text/html; charset=UTF-8
+200
+
+
+Erreur page web vérifiée :
+Ensuite, on remarque que les pages web ont différents codes de status. On a corrigé que “Leonard” possède le code 400. Ce qui signifie que le problème provient du client (de nous). On a alors rajouté le caractère “accent aigu” sur le “e” de “Léonard”, sur le fichier fr.txt. Ainsi, on obtient le code 200, l’erreur a été résolue.
+
+
+Séparation par tabulation :
+#exercice avec correction : code pour vérifier qu'on ai des arguments
+
+FICHIER_URLS=$1 #1ère varaible pour le fichier fr.txt
+FICHIER_SORTIE=$2 #on crée une deuxième varaible pour la sortie tableau-fr.txt
+num=0
+
+while read -r LINE;
+do
+
+    info=$(curl -I -L -s -w "%{content_type}\t%{http_code}\t" -o /dev/null "$LINE")
+    mots=$(lynx -dump -nolist "$LINE" 2>/dev/null | wc -w )
+
+
+     num=$((num + 1))
+
+    echo -e "$num \t $LINE \t $info \t $mots" >> "$FICHIER_SORTIE"
+
+done < $FICHIER_URLS
+echo "tableau tsv rempli"
+
+
+
+
+Dans le terminal on exécute les commandes : ./programmes/infourls.sh urls/fr.txt tableaux/tableau-fr.tsv
+
+J’ai donné un 2e argument au script pour afficher le tout dans un tableau tsv.
+
+
+J’ai essayé de faire ce script là (voir fichier codehtml.sh) pour transformer en html le tableau tsv, mais je n’ai pas compris quels étaient les problèmes : A chaque fois, j’avais toujours pas le tableau :
+
+
+echo
+"<html>
+<head>
+<meta charset='UTF-8'>
+<body>"
+
+echo
+<table>
+<tr>
+    <td>Num</td>
+    <td>LINE</td>
+    <td>Info</td>
+    <td>Mots</td>
+</tr>" >> "$FICHIER_HTML"
+
+
+while read -r line
+do
+    num=$((num + 1))
+
+     if [[ ! "$line" =~ ^https?:// ]]; then
+        line="https://$line"
+    info=$(curl -I -L -s -w "%{content_type}\t%{http_code}\t" -o /dev/null "$line")
+    mots=$(lynx -dump -nolist "$line" 2>/dev/null | wc -w)
+
+
+echo "<tr>
+    <td>$num</td>
+    <td>$line</td>
+    <td>$info</td>
+    <td>$mots</td>
+</tr>" >> "$FICHIER_HTML"
+
+done < "$FICHIER_URLS"
+
+echo "</table>
+</body>
+</meta charset='UTF-8'>
+</head>
+</html>" >> "$FICHIER_HTML"
+
+echo "Tableau HTML rempli : $FICHIER_HTML"
+
+
+
