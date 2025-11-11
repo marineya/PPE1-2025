@@ -349,16 +349,16 @@ j’obtiens le code suivant (voir fichier revue.sh) :
 
 > if [ $# -ne 1 ] #on vérifie qu'il y ait des arguments
 >then
->        echo "Le script attend exactement un argument : le chemin vers le fichier d'URL"
->           exit
+   echo "Le script attend exactement un argument : le chemin vers le fichier d'URL"
+         exit
 fi
 FICHIER_URLS=$1
 
-lineno=1
+>lineno=1
 while read -r line;
 do
-            echo ${lineno} ${line};
-done < "$FICHIER_URLS";
+          echo ${lineno} ${line};
+>done < "$FICHIER_URLS";
 
 Ensuite, dans un autre fichier sh, je fais un code qui va vérifier que les urls sont valides (voir fichier verifurls.sh)
 j’obtiens le code suivant :
@@ -368,7 +368,7 @@ OK=0
 NOK=0
 num=0
 
-while read -r LINE;
+>while read -r LINE;
 do
     num=$((num + 1))
     echo "url : $num $LINE "
@@ -409,22 +409,22 @@ Ensuite, on remarque que les pages web ont différents codes de status. On a cor
 Séparation par tabulation :
 #exercice avec correction : code pour vérifier qu'on ai des arguments
 
-FICHIER_URLS=$1 #1ère varaible pour le fichier fr.txt
+>FICHIER_URLS=$1 #1ère varaible pour le fichier fr.txt
 FICHIER_SORTIE=$2 #on crée une deuxième varaible pour la sortie tableau-fr.txt
 num=0
 
-while read -r LINE;
+>while read -r LINE;
 do
 
-    info=$(curl -I -L -s -w "%{content_type}\t%{http_code}\t" -o /dev/null "$LINE")
+   > info=$(curl -I -L -s -w "%{content_type}\t%{http_code}\t" -o /dev/null "$LINE")
     mots=$(lynx -dump -nolist "$LINE" 2>/dev/null | wc -w )
 
 
-     num=$((num + 1))
+  >   num=$((num + 1))
 
-    echo -e "$num \t $LINE \t $info \t $mots" >> "$FICHIER_SORTIE"
+>    echo -e "$num \t $LINE \t $info \t $mots" >> "$FICHIER_SORTIE"
 
-done < $FICHIER_URLS
+>done < $FICHIER_URLS
 echo "tableau tsv rempli"
 
 
@@ -438,11 +438,11 @@ J’ai donné un 2e argument au script pour afficher le tout dans un tableau tsv
 J’ai essayé de faire ce script là (voir fichier codehtml.sh) pour transformer en html le tableau tsv, mais je n’ai pas compris quels étaient les problèmes : A chaque fois, j’avais toujours pas le tableau :
 
 
-echo
-"<html>
-<head>
-<meta charset='UTF-8'>
-<body>"
+>echo
+>"<html>
+><head>
+><meta charset='UTF-8'>
+><body>"
 
 echo
 <table>
