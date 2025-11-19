@@ -39,6 +39,6 @@ echo "</table>
 </body>
 </meta charset='UTF-8'>
 </head>
-</html>" >> "$FICHIER_HTML"
+                                                            </html>" >> "$FICHIER_HTML"
 
 echo "Tableau HTML rempli : $FICHIER_HTML"

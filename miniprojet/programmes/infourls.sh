@@ -1,3 +1,5 @@
+#usr/bin/bash
+
 #exercice avec correction : code pour vérifier qu'on ai des arguments
 #afficher les info des urls et placer dans un tableau tsv :
 
@@ -17,6 +19,5 @@ do
     echo -e "$num \t $LINE \t $info \t $mots" >> "$FICHIER_SORTIE"
 
 done < $FICHIER_URLS
+
 echo "tableau tsv rempli"
-
-
