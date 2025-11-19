@@ -108,12 +108,15 @@ Il m'a fallu beaucoup de manipulations pour comprendre quelques commandes et pou
 ## SEANCE 3 : 8/10
 Pour afficher le nombre de lignes :
 
+## Exercice script bash :
 Pour cela, j'ai effectué la commande cat 2016/* | wc _l pour chaque année, ainsi que cat 2016/* | grep Location | wc _l, afin de rechercher les lignes contentant le mot Location.
 J'ai ajouté la commande echo avec des chevrons pour les exécuter sur le fichier sh sur Kate. **(voir fichier out_ex1sansmodification.txt et compte.sh)**
 
 En terminant l'exercice 1, j'ai relu l'ensemble des consignes. Je me suis aperçu que j'avais tout exécuté sur le terminal plutôt que sur le fichier sh. Je suis alors repartie sur le fichier SH pour ajouter les commandes, comme on avait vu en classe.
 
 En affichant les résutlats, je ne sais pas si c'était normal qu'ils apparaissent tous ensemble. En effet, le script SH imprimait l'ensemble de des résultats dans un seul bloc, au lieu de les afficher séparémment pour chaque année. J'ai donc modifié manuellement le fichier SH afin d'attribuer les résultats à l'année correspondante. **(voir exo1.sh)**
+
+Pour l'exercice, je n'ai aps pu commencer les autres exercices car j'ai d'abord été bloquée pour les premiers exercices. Nous avons poursuivit une correction (dans la séance suivante).
 
 **Exercice 1 de la fiche avec modification :**
 J’ai refais en essayant de suivre la correction en cours, et en continuant à la maison.
@@ -125,11 +128,124 @@ Les résultats se sont bien affichés sur le terminal.
 
 
 ## Séance 4 : 15/10
-- je n'ai pas compris la le premier argument reçu : datadir=$1.
+- je n'ai pas compris le premier argument reçu : datadir=$1.
 - correction exercice 2
+- commande tmp = commande absolu
+- correction exo2b :
+    kate nomdufichier.sh
+    prendre en argument année , mois et un certain nombre de lieux à afficher.
+    il y a une etape avant : cat ici
+    cat/2016/2016 cf marine
 
+
+ si on fait cut -f1 (f pour colonne et 1 pour le num de la colonne ici c est 1
+
+ f3 : trier par alphabétique
+
+ cut -f3 | sort | uniq -c | sort -nr => triage découpage mais il faut faire attention car ça sépare mal.
+
+ ⇒ cat 2016/2016*ann | grep Location | cut -f3 | sort | uniq -c | sort -n
+
+ si je fais : ⇒ cat 2016/2016*ann | grep Location | cut -f3 | sort | uniq -c | sort -g
+
+ tail - n 12 : je veux le top 12
+
+  $ on remplace aussi sur le chemin = on transforme la commande en varaible.
+
+ex 3 : les boucles :
+
+S'assurer que les conditions soient réunies
+J'ai besoin de 4 arguments =
 
 ## Séance 5 : 22/10
+Correction exercice :
+
+Lorsqu'on fait une boucle for sur la commande cat, les élément séparé par des espaces vont être compter comme des séparateurs de mots comme si on disait for element in "Je suis un fichier" cat et for sont moins indiqués que while read.
+
+Pour echo : il n'y a pas de séparation il met à la ligne juste les mots contrairement à cat qui sépare les valeurs (soit les mots) avec les espaces. Il ne faut alors pas utiliser for avec cat.
+
+
+Avec la correction, il ne faut pas garder urls/txt en argument et donc ne pas garder en variable globale du script. Le but c’était d'avoir des arguments au script et ensuite ajouter les argments. Pour cela, il faut vérifier qu’on a bien donné des arguments.
+Au départ, dans le projet 1, j'avais effectué les commandes nok et ok pour verrifier si les urls étaient valables. Mais, je l'ai fait pour une autre question qui ne le demandais pas.
+Mais, le faire en amont m'a permis de voir tout de même, les urls valides.
+
+On vérifie les nombre d'arguments avec : if [ $#-ne 1 ]
+
+
+Pour afficher le nombre de lignes :
+
+
+
+TEST DES CARACTERES
+Exemple de test que nous avons fait en cours :
+La commande mkdir a\*isborn nous permet de créer un dossier. Mais la machine n'interprète pas l'étoile comme un carcatere spécial
+
+on met des guillemets autour d un bloc de chaine pour éviter certianes erreurs comme : les mauvaises interpétation de la machine
+autre ex: mkdir un\ dossier -
+
+Le carcatere "*" :
+• * (etoile) : expression rég répéter le truc d’avant(indique une qté = quantifieur)
+vs bash = substitue-moi ce que tu arrives a trouver à la place (=indique une substitution)
+	=> se ressemble mais l' interprétation est différente
+
+Lorsqu'on vérifie si les urls sont correctent, on passe par une correction.
+
+On a observé que la 6e url avait une erreur de type 300. Le problème venait du serveur, on ne peut donc pas faire une correction.
+
+Quant à l'URL 7, >il y a une erreur sur Léonard de vinci avec l’accent du "e" -> en é => ici, il fallait donc vérifier soit même.
+
+
+
+pr récupérer encodage et type de contenu(charset) : etape 1 : man curl => commande manuel-w = demande a curla afficher info sur la sortie standard= ça  donne aussi des élémentqu’on pt afficher, et que possible de séparer valeur par \t etc=> y a d autres façon de faire ! tant qu on a le bon résultaton pourra donc avoir comme éléments (élé) : content-type : curl I url (-> grand i)on pt réccupérer ces info avec option w : cad a la fin tu affiche des choses dont : content type(ou on voit que il affiche le reste cad charset utf8)pour avoir l entete on used l option -w pour dire a la amachine tu vas mafficher le récupérer , on fait la commande : curl -I -w “urls”⇒on obtient le code curl -I -w “{http_code}\n%u{content_type}urls”
+
+
+
+
+
+
+
+Travailler sur un corpus multilingue :
+En cours, nous avons évoqué le travail en groupe
+
+
+Projet de groupe : « éude du lexique de langue ( mot qui a un rayonnement intéressant =sa polysémie, intéressant à utiliser, traduction possible dans la langue, etc. par ex dans tel mot, en langue x ca donne se sens là et dans y langue on a autre chose comme sens).
+
+Chaque groupe occupera une partie.
+
+Etape 1 : choisir un mot (pas trop rare) qui a une polysémie.
+
+Etape 2 : constituer le corpus sous forme de de liste url qui représentent/parle du mot. 50 urls par personne du groupe.
+
+Etape 3 : analyse des données récoltées.
+
+Rendu final : site internet qui fera un rapport sur ce qu'on a pu récolté, les démarches, les analyses, hypothèses, conclusions.
+
+
+Miniprojet 2 :
+Nous avons abordé les notions de balisage, de html.
+
+html : langage qui permet de structurer des informations d’une page pr la rendre visible. On balise du contenu dans un contenu textuel.
+
+Balisage : marqueur de début et de fin.On a du texte et on note des zones dedans.
+
+ Balises : ouvrante, fermante et auto fermantes ou vide <balise/>
+- <br> : balise br qui est autofermante car il y a un nombre de balise limité et il n'y a pas besoin de \ .
+- Attributs d une balise (noeuds) : clé/valeur renseignés sur la  balise ouvrante ou autofermante : ces balises ont des attribut (ex : page web) , on réccupère différents attributs (code http=valeur de 200 300 etc, charset utf8; iso, koi-8 etc)ces attributs sont dans la balise ouvrante ex : chat dort <NP fct = “SUJ”etc<SENT> : phrase qui va commencer et qui aura un noyau verbale et a l interieur il aura det, n. Dans la balise NP, on aura d'autres choses a l'intérieur.
+
+
+donc apres avoir fait le w de l arbre, on aura le format texte cf SL6 DU balisage a quoi ca ressemble ? IVG : genreM : masuclinAucun contenu textuel sera dans <head> !entete head ce qui peut ns intéresser : l encodage charset => va être renseigné dans le head, balise méta pr métadonnévoir diapo 7 et 8sera dnas une balise méta pour métadonnée cf SL8html créer un tableau on a besoin de : 4 balises : table = dire qu’on ets en train de créer unt tableautr : représente les différentes données -> il représente dnc une ligneth : représente une cellule d’entete (premiere ligend e notre tableau)td : table data -> une cellule qui n est pa dna sla premier ligne= ttes les autres cellules qui ne sont pas dans la 1ere ligneSL HTML : Créer un tableau si on prend un tableau : on a une cellule livre et taille qui représente nos enteteles donneés : le premier livre sera “du coté de chez swan” qui aura donc 1 méga octetle deuxième livre s appellera “l’assomoir” et sa taille sera de 900ko.=> chaque balise ouvrante ait une balise fermante.
+
+
+Consigne : Reprendre le script du mini projet et transformer le TSV en HTML (lisible en tsv et donc formater en html)
+ et la page doit avoir le corps, l'entête. Donc notre fichier.html doit être capable d'être (“tableau-fr.html”)  lu donc apres avoir crée le tableau html, on pourra supprimer si on veut le tableau sur le dépôt git : devoir : - corriger le code de la derniere fois et ajouté le tag : “miniprojet-1 revue” en commitant.
+
+puis faire l exo de transformation, terminer avec le tag “miniprojet-2”et faire la feuille de bonus
+
+reprendre le script du mini projet et transformer le tableau tsv > en html
+modfier fichier pr conteur tableau lisible et formaté en htmlATTENTION ! on demande au script d’écrire notre html et c pas nous qui modifions !comme notre script génère un TSV on veut now qu il génère un html !!!
+
+
+
 
 
 
@@ -480,6 +596,362 @@ J’ai essayé de faire ce script là (voir fichier codehtml.sh) pour transforme
 ></html>" >> "$FICHIER_HTML"
 
 >echo "Tableau HTML rempli : $FICHIER_HTML"
+
+
+# Séance 6 :
+
+correction effectuée :
+1.J’ai mieux compris que cat est plus utilisé les éléments vont être séparé par des espaces , mais ils comptent les séparateurs comme de mots.
+
+2.en faisant la correction, ‘j’ai gardé le chemin dans le nom des arguments, il faut le refaire (recréer un tag)
+car plus tard, on traitera pslrs fichier urls par langue
+
+2.2
+
+
+
+ex2 :
+code http, certaines erreurs pvt ê corrigé
+l’encodage de la page présent, nombre de mots dans la page
+
+->utiliser une redirection pr la ligne 6 = est un pb, il ne pouvait pas se corriger (le pb est coté serveur) car ça indiquait 500 qlqch
+
+j’avais affiché que les codes avec https : pas faux non plus donc ca va
+
+—------
+
+on a vu :
+les commandes \ et * qui sont différentes en expression régulière et en bash.
+ne pas mettre d’espace dans nos fichiers = pour éviter d‘avoir des erreurs (éviter espaces)
+erreur 429 voir 30.00
+—-------
+
+
+# Séance 7 : 12.11
+- correction transformation fichier sh > fichier html
+
+- les pages github :
+    - Démosntration : réccupérer fichier index.html sur le dossier prof > aller sur git-along > >git add/gitcommit/git push>  a partir du depot git : mettre index.html dans index à la racine du dépôt > copier et coller puis cloner (git clone lien sh) le lien sh (sur github)> aller dans Settings> pages> cliquer sur main et sauvegarder>aller dans ACTION > attendre que ça soit vert > déploiement réussi.
+    > remplacer son id par nomutilistauer sur le lien
+
+
+Devoir semaine pro : finaliser miniprojet et construire deux pages html
+
+ - style Bulma : creer page accueil
+ - On a vu les différentes balsies comme <p> (paragraphe), <b>, <p style> etc...
+ - assets : sont des ressources images,
+ - feuille de style : style.css
+ - CSS
+ - consultation des documentation
+
+
+- on test bulma a partir du fichier html, faire F12
+
+
+
+journal de bord :
+
+Journal de bord du
+11novembre
+
+Correction eexercice :
+
+Lorsqu'on fait une boucle for sur la commande cat, les élément séparé par des espaces vont être compter comme des séparateurs de mots comme si on disait for element in "Je suis un fichier" cat et for sont moins indiqués que while read.
+
+Pour echo : il n'y a pas de séparation il met à la ligne juste les mots contrairement à cat qui sépare les valeurs (soit les mots) avec les espaces. Il ne faut alors pas utiliser for avec cat.
+
+
+Avec la correction, il ne faut pas garder urls/txt en argument et donc ne pas garder en variable globale du script. Le but c’était d'avoir des arguments au script et ensuite ajouter les argments. Pour cela, il faut vérifier qu’on a bien donné des arguments.
+Au départ, dans le projet 1, j'avais effectué les commandes nok et ok pour verrifier si les urls étaient valables. Mais, je l'ai fait pour une autre question qui ne le demandais pas.
+Mais, le faire en amont m'a permis de voir tout de même, les urls valides.
+
+On vérifie les nombre d'arguments avec : if [ $#-ne 1 ]
+
+
+Pour afficher le nombre de lignes :
+
+
+
+TEST DES CARACTERES
+Exemple de test que nous avons fait en cours :
+La commande mkdir a\*isborn nous permet de créer un dossier. Mais la machine n'interprète pas l'étoile comme un carcatere spécial
+
+on met des guillemets autour d un bloc de chaine pour éviter certianes erreurs comme : les mauvaises interpétation de la machine
+autre ex: mkdir un\ dossier -
+
+Le carcatere "*" :
+• * (etoile) : expression rég répéter le truc d’avant(indique une qté = quantifieur)
+vs bash = substitue-moi ce que tu arrives a trouver à la place (=indique une substitution)
+	=> se ressemble mais l' interprétation est différente
+
+Lorsqu'on vérifie si les urls sont correctent, on passe par une correction.
+
+On a observé que la 6e url avait une erreur de type 300. Le problème venait du serveur, on ne peut donc pas faire une correction.
+
+Quant à l'URL 7, >il y a une erreur sur Léonard de vinci avec l’accent du "e" -> en é => ici, il fallait donc vérifier soit même.
+
+
+
+pr récupérer encodage et type de contenu(charset) : etape 1 : man curl => commande manuel-w = demande a curla afficher info sur la sortie standard= ça  donne aussi des élémentqu’on pt afficher, et que possible de séparer valeur par \t etc=> y a d autres façon de faire ! tant qu on a le bon résultaton pourra donc avoir comme éléments (élé) : content-type : curl I url (-> grand i)on pt réccupérer ces info avec option w : cad a la fin tu affiche des choses dont : content type(ou on voit que il affiche le reste cad charset utf8)pour avoir l entete on used l option -w pour dire a la amachine tu vas mafficher le récupérer , on fait la commande : curl -I -w “urls”⇒on obtient le code curl -I -w “{http_code}\n%u{content_type}urls”
+
+
+
+
+
+
+
+Travailler sur un corpus multilingue :
+En cours, nous avons évoqué le travail en groupe
+
+
+Projet de groupe : « éude du lexique de langue ( mot qui a un rayonnement intéressant =sa polysémie, intéressant à utiliser, traduction possible dans la langue, etc. par ex dans tel mot, en langue x ca donne se sens là et dans y langue on a autre chose comme sens).
+
+Chaque groupe occupera une partie.
+
+Etape 1 : choisir un mot (pas trop rare) qui a une polysémie.
+
+Etape 2 : constituer le corpus sous forme de de liste url qui représentent/parle du mot. 50 urls par personne du groupe.
+
+Etape 3 : analyse des données récoltées.
+
+Rendu final : site internet qui fera un rapport sur ce qu'on a pu récolté, les démarches, les analyses, hypothèses, conclusions.
+
+
+Miniprojet 2 :
+Nous avons abordé les notions de balisage, de html.
+
+html : langage qui permet de structurer des informations d’une page pr la rendre visible. On balise du contenu dans un contenu textuel.
+
+Balisage : marqueur de début et de fin.On a du texte et on note des zones dedans.
+
+ Balises : ouvrante, fermante et auto fermantes ou vide <balise/>
+- <br> : balise br qui est autofermante car il y a un nombre de balise limité et il n'y a pas besoin de \ .
+- Attributs d une balise (noeuds) : clé/valeur renseignés sur la  balise ouvrante ou autofermante : ces balises ont des attribut (ex : page web) , on réccupère différents attributs (code http=valeur de 200 300 etc, charset utf8; iso, koi-8 etc)ces attributs sont dans la balise ouvrante ex : chat dort <NP fct = “SUJ”etc<SENT> : phrase qui va commencer et qui aura un noyau verbale et a l interieur il aura det, n. Dans la balise NP, on aura d'autres choses a l'intérieur.
+
+
+donc après avoir fait le w de l' arbre, on aura le format texte cf SL6 DU balisage a quoi ca ressemble ? IVG : genreM : masuclinAucun contenu textuel sera dans <head> !entete head ce qui peut ns intéresser : l' encodage charset => va être renseigné dans le head, balise méta pr métadonnée voir diapo 7 et 8sera dnas une balise méta pour métadonnée cf SL8html créer un tableau on a besoin de : 4 balises : table = dire qu’on ets en train de créer unt tableautr : représente les différentes données -> il représente dnc une ligneth : représente une cellule d’entete (premiere ligend e notre tableau)td : table data -> une cellule qui n est pa dna sla premier ligne= ttes les autres cellules qui ne sont pas dans la 1ere ligneSL HTML : Créer un tableau si on prend un tableau : on a une cellule livre et taille qui représente nos enteteles donneés : le premier livre sera “du coté de chez swan” qui aura donc 1 méga octetle deuxième livre s appellera “l’assomoir” et sa taille sera de 900ko.=> chaque balise ouvrante ait une balise fermante.
+
+
+Consigne : Reprendre le script du mini projet et transformer le TSV en HTML (lisible en tsv et donc formater en html)
+ et la page doit avoir le corps, l'entête. Donc notre fichier.html doit être capable d'être (“tableau-fr.html”)  lu donc apres avoir crée le tableau html, on pourra supprimer si on veut le tableau sur le dépôt git : devoir : - corriger le code de la derniere fois et ajouté le tag : “miniprojet-1 revue” en commitant.
+
+puis faire l exo de transformation, terminer avec le tag “miniprojet-2”et faire la feuille de bonus
+
+reprendre le script du mini projet et transformer le tableau tsv > en html
+modfier fichier pr conteur tableau lisible et formaté en htmlATTENTION ! on demande au script d’écrire notre html et c pas nous qui modifions !comme notre script génère un TSV on veut now qu il génère un html !!!
+
+
+
+Séance 6
+
+Séance 6 : 05/10
+
+correction effectuée :
+1.J’ai mieux compris que cat est plus utilisé les éléments vont être séparé par des espaces , mais ils comptent les séparateurs comme de mots.
+
+2.en faisant la correction, ‘j’ai gardé le chemin dans le nom des arguments, il faut le refaire (recréer un tag)
+car plus tard, on traitera pslrs fichier urls par langue
+
+2.2
+
+
+
+ex2 :
+code http, certaines erreurs pvt ê corrigé
+l’encodage de la page présent, nombre de mots dans la page
+
+->utiliser une redirection pr la ligne 6 = est un pb, il ne pouvait pas se corriger (le pb est coté serveur) car ça indiquait 500 qlqch
+
+j’avais affiché que les codes avec https : pas faux non plus donc ca va
+
+—------
+
+on a vu :
+les commandes \ et * qui sont différentes en expression régulière et en bash.
+ne pas mettre d’espace dans nos fichiers = pour éviter d‘avoir des erreurs (éviter espaces)
+erreur 429 voir 30.00
+—-------
+
+
+## séance 7 :
+correction balises html pour la transformation
+Je remarque que je n’avais pas
+
+
+
+18.11 : correction du tableau avant de faire le mini projet 3 :
+
+Au départ, j’ai suivi les corrections que nous avons faites avec les professeurs. Lorsque je mettais l'encodage, j’avais au départ comme résultat que des N/A pour chaque URL.
+Mais, ensuite j’ai résolu le problème qui était la condition if mal positionnée. Je l’ai alors retirée. Mais, ensuite, j’ai obtenu un décalage de colonne, par exemple j’ai eu comme nom de la colonne mots mais à la place du nombre de mots, j’ai eu les encodages.
+En faisant des recherches, sur le site https://forum.ubuntu-fr.org/viewtopic.php?id=165314, j’ai pu voir que les urls pouvaient contenir des caractères dont la machine interprète comme des commandes; ce qui explique le décalage. alors, j’ai effectué les commandes “tr -d '\n'
+“.
+#### Explication du code :
+D’abord la première condition permet de voir si on a des arguments et si oui combien. Ce qui explique le $#.
+on note les arguments avec $1 et $2 pour partir d’un dossier/fichier
+lorsqu’on exécutera le code, on nommera le nom des dossier/fichiers dont on a besoin.
+ensuite on imprime sans oublier le “-e” pour que la machine ne tienne pas compte des tabulations \t comme des simples caractères. Le chevron permet d’imprimer les informations dans un autre fichier qui va se créer.
+on ajoute le compteur “num” pour le nombre de lignes numérotées
+donc, on incrémente en ajoutant +1
+sur les sites https://forum.ubuntu-fr.org/viewtopic.php?id=165314, j’ai cherché à faire ignorer les tabulations (les caractères) qui sont intégrés aux urls.
+ensuite, on récupère les informations des urls comme l’encodage, le nombre de mots etc.
+ON a vu en cours que curl -I permettait de reprendre les différentes étapes de discussion avec un serveur.
+avec “grep -i "Content-Type:" | tail -1 | grep -Po "charset=\S+" | cut -d"=" -f2)”, on va chercher le charset des urls. comme certaines urls n’ont pas tous le meme charset UFT-8, on ajoute N/A.
+j’ai ajouté la commande && (https://steemit.com/bash/@elliotyagami/bash-difference-between-or-and-or-or-and-and-and).
+
+
+### Problème : fichier code_html_corriger :
+Je n’ai pas pu faire la suite car j’ai été bloquée au code html.
+EN effet, j’ai suivis la correction, mais je n’ai pas compris pourquoi le code ne fonctionnait pas :
+j’ai tenté de déplacer le chevron et l'argument $3 pour la transformation en html, mais je n’ai pas réussi à trouver la solution.
+
+#!/usr/bin/bash
+if [ $# -ne 2 ]; then
+    echo "$0 fichier attendu"
+    exit 1
+fi
+
+FICHIER_URLS="$1"
+FICHIER_TSV="$2"
+FICHIER_HTML="$3"
+
+echo -e "num\turl\thttp_code\tmots" > "$FICHIER_TSV"
+
+echo -e "
+    <html>
+    <body>
+    <table>
+            <tr>
+            <th>num</th>
+            <th>line</th>
+            <th>data</th>
+            <th>http_code</th>
+            <th>mots</th>
+            <th>encoding</th>
+            </tr>"
+
+num=0
+
+while read -r line; do
+    [ -z "$line" ] && continue
+
+    num=$((num + 1))
+    line=$(echo "$line" | tr -d "\r\n")
+    data=$(curl -s -L "$line")
+    http_code=$(curl -s -o /dev/null -w "%{http_code}" "$line")
+    mots=$(curl -s "$line" | wc -w)
+    encoding=$(curl -s -I -L "$line" | grep -i "Content-Type:" | tail -1 | grep -Po "charset=\S+" | cut -d"=" -f2)
+    [ -z "$encoding" ] && encoding="N/A"
+
+
+
+
+> echo -e "
+    <tr>
+            <td>$num</td>
+            <td>$line</td>
+            <td>$data</td>
+            <td>$http_code</td>
+            <td>$mots</td>
+            <td>$encoding</td>
+    </tr>" >> "$FICHIER_HTML"
+
+    echo -e "$num\t$line\t$http_code\t$mots\t$encoding" >> "$FICHIER_TSV"
+
+done < "$FICHIER_URLS"
+
+echo -e "
+
+</table>
+</body>
+</html>"
+
+echo "Tableau TSV rempli : $FICHIER_TSV"
+
+echo "fichier html ok : $FICHIER_HTML"
+
+
+Pour le code html, on a besoin de "tab’e" pour dire qu'on est en train de créer un tableau.
+
+• tr : représente les différentes données -> il représente donc une ligne
+• th : représente une cellule d’entete (première ligne de notre tableau)
+• td : table data -> une cellule qui n est pa dans la premier ligne
+=
+ttes les autres cellules qui ne sont pas dans la 1ere ligne
+
+
+En cours, nous avons évoqué les pages github.
+À partir du dépôt git : nous avons mis le fichier index.html dans index à la racine du dépôt.
+Nous l'avions téléchargé et fait git push sur git along et git cloné.
+
+
+On doit faire attention aux chemins = qu'ils soient toujours en relatif dnas notre dépôt
+exemple : /home/marine, quand on déploie sur un autre utilisateur le déploiement ne marchera pas.
+
+
+### Pour le cours prochain :
+Nous devons construire deux pages html où les deux seront reliée ou l’une sera reliée .
+- construire 2 pages : page du tableau et page de l'index
+
+
+Nous avons également vu le style Bulma :
+
+
+Nous avons vu :
+- la balise  : <p> pour faire des paragraphes
+: on peut avoir  les différents niveau (titre niveau 1, niv 2 etc) comme sur word
+
+Nous avons vu comment le rendre attrayant :
+• - CSS : feuille de style permet indiquer comment doit être rendu les éléments du html
+• Dans le html, on peut ajouter du style avec : <p style="  ......">
+• Par exemple : html
+<head>
+<style>
+	p { paragraphe seront en rouge sur fond noir
+colour : red
+background color black
+}
+=> mes paragraphes seront en rouge sur fond noir.
+
+
+- les assets : ressources images, etc
+
+style. case :
+ma page sera entouré de rouge et pixel
+=> paragraphe dans le cas general seront en rouge et encadré
+
+
+- Bibliothèque Bulma CSS (plus facile)
+- on a vu les différentes couleurs etc qu’on peut faire.
+• ajout d'icones dans les textes
+• Nous avons créé une copie du fichier html (cp sur console) pour mettre le style bulma et l ajouter dans le git miniprojet2
+
+- nous avons vu les expressions régulières.
+
+- Utilisation de régular expression : on teste en copiant du texte dans l'encadré Regular Expression.
+Ensuite, a droite il y a l'explanation qui explique comment il interprete ce que nous nous lui avons fait dire.
+
+## Devoir a faire : utilisation bulma, liens :
+Comme je ne peux pas faire la suite sans que mon code html soit correcte, j'essaye de répondre et de faire l'exercice sur le journal de bord.
+On sait qu'on doit avoir une page d'accueil qui prendra les valeurs du tableau tsv. On devrait avoir aussi un lien dans l'indice.html qui devrait nous mener jusqu'au tableau.
+Partir de nos fichiers du tableau html et rendre attrayant les pages.
+
+
+### Page 1 On doit avoir une page attrayante (avec utilisation de Bulma) qui explique en quoi consiste le projet 1 :
+Paragraphe :
+
+      Le projet 1 consistait à créer un code ou un programme qui permettait à partir d'un fichier de relever les informations de chaque url. L'idée était de faire noter chaque informations et donc d'afficher le numéro des lignes pour chaque url.
+
+On avait également un code non complet auquel nous devions transformer le chemin des urls en paramètre du script et ajouter des arguments.
+
+### Page 2 : (en ajoutant les chevrons)
+html
+head
+title Mini projet 1 </title
+style
+	p { paragraphe colour : blue
+background color white
+}
+
 
 
 
