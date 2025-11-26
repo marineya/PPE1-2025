@@ -952,6 +952,62 @@ style
 background color white
 }
 
+- voir le tag correctionminiprojet
 
+
+### Réussite : code html et fichier html affichant le tableau : voir fichier "fichier_html.html et "code_html_corriger.sh" qui a été recorrigé"
+- J'ai refais une correction pour obtenir le code html
+- J’ai remarqué que je n'avais pas mis l'argument avec le chevront aroès avoir écris le code en echo.
+- J'avais au départ, le contenu d'un fichier dans le fichier html, et j'ai bien relu mon code, j'avais ajouté l'argument $data dans echo ce qui fait que ça m'a affiché le contenu d'un lien dans le tableau.
+
+
+
+
+26 nov :
+Exercice Git 2 gérer les travail a plusieurs
+
+Exercice 1, j'ai effectué les commandes git :
+git check permet de basculer entre différentes versions
+git reset : garde les modifications mais déplace HEAD (représente le commit sur lequel vous êtes en train de travailler) vers le commit spécifié et annule alors les modifications apportées.
+git stash : on avait au début des séances déjà évoqué git stash avec des options ajoutées. Elle permettait d'appliquer des changements contenu dans un stash. dans cette commande git stash il s’agit d’enregistrer l’état actuel du répertoire de travail et de l’index mais qu’on veut revenir à un répertoire de travail propre.”https://git-scm.com/docs/git-stash/fr
+
+Ex 2 : Créer un README avec un peu de contenu
+Dans le dossier git along, j’ai d’abord fait git status pour voir si la branche a été mise à jour, il m’a affiché que non. J’ai donc mis à jour et comité, puis git push.
+
+
+Ensuite, j’ai ajouté et git commit, git push le fichier README0md.
+
+pour copier coller le paragraphe du texte, j’ouvre README.MD sur Kate (éditeur de texte). Ensuite, je colle le texte dedans, puis je sauvegarde. Ensuite, on vient faire git add README.md, git commit, git push pour synchroniser sur le github.
+
+Ex 3,a :
+IL fallait modifier le fichier REAMDE.md via l’interface web (github) : supprimer le premier
+paragraphe de lorem ipsum. Donc au lieu de supprimer le paragraphe, j’ai supprimé le titre par exemple. J’ai ensuite enregistré en faisant commit changes sur le site.
+
+Ex 3, b :
+sur le terminal, je fais la commande echo, en ajoutant une ligne à la fin du fichier readme.md.
+pour cela, je fais : echo -e “\nLigne ajoutée” >> README.md
+Ensuite je fais cat README.md : il affiche bien la ligne ajoutée et imprimée avec echo.
+Puis, je fais les git add, commit, push
+Mais, on observe après git pus, qu’il a donné une erreur. Il affiche :
+|“! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'github.com:marineya/git-along.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.”|
+
+
+
+DOnc, pour récupérer les métadonnées du dépôt en ligne, il faut faire git fetch qui est la commande qui récupère en ligne. Puis, faire git status pour vérifier notre dépôt. Il indiquera les commit et nous permet de nous faire savoir à combien de comit on est en avance. En faisant git status, j’obtiens :
+“Your branch and 'origin/main' have diverged,
+and have 1 and 1 different commits each, respectively.
+ (use "git pull" if you want to integrate the remote branch with yours)”
+
+ Il faut faire ensuite git reset qui permet de faire machine arrière dans les commits entre le dépôt en ligne et votre dossier local.
+
+Après avoir fais les commandes git reset HEAD~1 (de la fiche help), le terminal affiche : Unstaged changes after reset:
+M       README.md
+Je suppose que le commit a été annulé. IL revient à la dernière version du dépot.
 
 
