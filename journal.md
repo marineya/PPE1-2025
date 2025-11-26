@@ -1010,4 +1010,114 @@ Après avoir fais les commandes git reset HEAD~1 (de la fiche help), le terminal
 M       README.md
 Je suppose que le commit a été annulé. IL revient à la dernière version du dépot.
 
+---------
+
+### 26 nov et 27 nov :
+### Exercice Git 2 gérer les travail a plusieurs
+
+## Exercice 1, j'ai effectué les commandes git :
+git check permet de basculer entre différentes versions
+git reset : garde les modifications mais déplace HEAD (représente le commit sur lequel vous êtes en train de travailler) vers le commit spécifié et annule alors les modifications apportées.
+git stash : on avait au début des séances déjà évoqué git stash avec des options ajoutées. Elle permettait d'appliquer des changements contenus dans un stash. dans cette commande git stash il s’agit d’enregistrer l’état actuel du répertoire de travail et de l’index mais qu’on veut revenir à un répertoire de travail propre.”https://git-scm.com/docs/git-stash/fr
+
+## Ex 2 : Créer un README avec un peu de contenu
+Dans le dossier git along, j’ai d’abord fait git status pour voir si la branche a été mise à jour, il m’a affiché que non. J’ai donc mis à jour et comité, puis git push.
+
+
+Ensuite, j’ai ajouté et git commit, git push le fichier README.md.
+
+Pour copier coller le paragraphe du texte, j’ouvre README.MD sur Kate (éditeur de texte). Ensuite, je colle le texte dedans, puis je sauvegarde. Ensuite, on vient faire git add README.md, git commit, git push pour synchroniser sur le github.
+
+## Ex 3,a :
+IL fallait modifier le fichier REAMDE.md via l’interface web (github) : supprimer le premier
+paragraphe de lorem ipsum. Donc au lieu de supprimer le paragraphe, j’ai supprimé le titre par exemple. J’ai ensuite enregistré en faisant commit changes sur le site.
+
+## Ex 3, b :
+sur le terminal, je fais la commande echo, en ajoutant une ligne à la fin du fichier readme.md.
+pour cela, je fais : echo -e “\nLigne ajoutée” >> README.md
+Ensuite je fais cat README.md : il affiche bien la ligne ajoutée et imprimée avec echo.
+Puis, je fais les git add, commit, push
+Mais, on observe après git pus, qu’il a donné une erreur. Il affiche : “! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'github.com:marineya/git-along.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.”
+
+
+
+Donc, pour récupérer les métadonnées du dépôt en ligne, il faut faire git fetch qui est la commande qui récupère en ligne. Puis, faire git status pour vérifier notre dépôt. Il indiquera les commits et nous permettra de nous faire savoir à combien de comit on est en avance. En faisant git status, j’obtiens :
+“Your branch and 'origin/main' have diverged,
+and have 1 and 1 different commits each, respectively.
+ (use "git pull" if you want to integrate the remote branch with yours)”
+
+Il faut faire ensuite git reset qui permet de faire machine arrière dans les commits entre le dépôt en ligne et votre dossier local.
+
+Après avoir fais les commandes git reset HEAD~1 (de la fiche help), le terminal affiche : "Unstaged changes after reset:"
+"M       README.md"
+Je suppose que le commit a été annulé. Il revient à la dernière version du dépôt.
+
+
+Pour récupérer les modifications en ligne, on met de côté les modifications
+En utilisant les commandes help, on observe qu’en faisant git diff, cela permet d’afficher les modifications que nous avons apportées IL affiche en vert les modifications avec le symbole “+”, lorsque nous avons effectué la commande echo “ligne ajouté”. EN suivant les étapes de l’exercice, j’ai ensuite effectuée la commande git stash qui permet de cacher les modifications sans les commiter.
+Ensuite, j’affiche le contenu du fichier README.md avec “cat” : on remarque que la phrase “Ligne ajoutée” n'apparaît pas car elle a été cachée en faisant git stash.
+
+
+## Exercice 4.c
+ Troisième temps : resynchroniser le dépôt et appliquer les changements
+Pour afficher les commandes de stash avec l’option list (car nous devons lister les modifications dans notre stash), j’ai d’abord fait la commande git –help. Mais, je n’ai pas trouvé la commande pour lister, je me suis demandée si c’était normal ou s' il fallait utiliser une autre commande pour lister. J’ai alors regardé sur la fiche d’exercice Help et la commande était git status list. Mais, je n’ai pas compris pourquoi elle n’y était pas lorsque j’avais fait la commande help.
+En faisant git stash list, le terminal affiche : ""“stash@{0}: WIP on main: 38e550d modif”"". Pour tenter de comprendre, je me suis penchée sur le site suivant : "https://git-scm.com/docs/git-stash"
+qui explique qu’il s’agit du stash récemment créé.
+De plus, on peut ajouter à l’intérieur des accolades l’entrée que l’on veut la plus récente.
+
+Puis, j’ai utilisé git diff, mais rien ne s’affichait. En m'aidant de l’exercice HELP, je devais plutôt utiliser la commande git stash show -p 0 pour voir le diff du dernier élément du stash.
+Avant de faire cette commande, je n’avais pas trop compris, mais en l’utilisant, il m’a affiché alors le contenu du fichier README.md et lis en vert les modifications que j’avais effectué. On retrouve bien un saut de ligne avec la phrase “Ligne ajoutée”.
+
+Puis, on termine avec git pull (la commande permettant de mettre à jour les modifications effectuées). La commande git pull selon le site : https://git-scm.com/docs/git-pull/fr
+“Incorpore les modifications d’un dépôt distant dans la branche courante. Si la branche courante est en retard par rapport à la branche distante, alors par défaut, cela avancera rapidement la branche courante pour correspondre à la branche distante. Si la branche courante et le dépôt distant ont divergé, l’utilisateur doit spécifier comment réconcilier les branches divergentes”.
+
+Avec git pull, il affiche :
+"pdating 38e550d..882df70"
+"Fast-forward"
+"README.md | 1 -"
+"1 file changed, 1 deletion(-)"
+
+Ce qui signifie qu’un fichier a été modifié.
+Si je fais “cat” pour afficher le contenu du fichier, j'obtiens seulement le paragraphe sans le titre affiché qui était “What is Lorem Ipsum?” car je l’avais retiré et donc modifier le fichier. Le saut de ligne et la phrase ajoutée n’apparaissent pas non plus.
+
+## Exercice 4.d
+ Dernier temps : resynchroniser le dépôt et appliquer les changements
+
+Je regarde s' ils ont bien synchronisé, à priori oui. Je suis allée voir sur Github et on obtient exactement les mêmes modifications du fichier. L’affichage du contenu sur Github et sur le terminal est identique.
+
+Maintenant, en suivant la consigne, le fichier est synchronisé avec le dépôt en ligne. On va à présent afficher à nouveau les changements qui seraient appliqués avec le dernier stash pour voir s’il s’agit bien des mêmes changements que précédemment selon la consigne :
+On refait git stash show -p 0
+(faire cette commande encore permet d'afficher et d’aller à la plus récente modification qui n’a pas encore été commitée)
+
+Ensuite, je pense que je dois utiliser une commande qui puisse affirmer les changements faits. Pour cela, je regarde sur le site vu précédemment. Après lecture des différentes commandes, je ne suis pas sûre de pouvoir utiliser la commande git stash apply. De ce que j’ai pu comprendre je pense que cette commande permettra de récupérer les modifications et de les appliquer. N'étant pas certaine, j’ai regardé la commande utilisée dans l’exercice HELP. En effet,il s’agissait de la commande git stash pop. Celui-ci va cependant supprimer les états de la liste de remisage et appliquer les modifications d’après le site cité plus haut.
+
+On obtient :
+"marine@marine-960qgk:~/Documents/Plurital/git-along$ git stash pop
+Auto-merging README.md
+On branch main
+Your branch is up to date with 'origin/main'."
+
+"Changes not staged for commit:"
+ "(use "git add <file>..." to update what will be committed)"
+ "(use "git restore <file>..." to discard changes in working directory)"
+      "modified:   README.md"
+
+"no changes added to commit (use "git add" and/or "git commit -a")"
+
+
+Cela signifie qu’il a fusionné en appliquant les modifications sur mon stash à mon fichier.
+
+Ainsi, on procède à la même répétition avec git add, git commit et git push pour pousser le fichier mis à jour vers le dépôt en ligne.
+
+
+
+
+
+
 
