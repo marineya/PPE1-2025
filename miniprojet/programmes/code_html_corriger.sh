@@ -8,6 +8,8 @@ FICHIER_URLS="$1"
 FICHIER_TSV="$2"
 FICHIER_HTML="$3"
 
+> "$FICHIER_HTML"
+
 echo -e "num\turl\thttp_code\tmots" > "$FICHIER_TSV"
 
 echo -e "
@@ -17,11 +19,10 @@ echo -e "
             <tr>
             <th>num</th>
             <th>line</th>
-            <th>data</th>
             <th>http_code</th>
             <th>mots</th>
             <th>encoding</th>
-            </tr>"
+            </tr>" >> "$FICHIER_HTML"
 
 num=0
 
@@ -32,31 +33,27 @@ while read -r line; do
     line=$(echo "$line" | tr -d "\r\n")
     data=$(curl -s -L "$line")
     http_code=$(curl -s -o /dev/null -w "%{http_code}" "$line")
-    mots=$(curl -s "$line" | wc -w)
+    mots=$(curl -s -L "$line" | wc -w)
     encoding=$(curl -s -I -L "$line" | grep -i "Content-Type:" | tail -1 | grep -Po "charset=\S+" | cut -d"=" -f2)
     [ -z "$encoding" ] && encoding="N/A"
-
-
-
 
 echo -e "
     <tr>
             <td>$num</td>
             <td>$line</td>
-            <td>$data</td>
             <td>$http_code</td>
             <td>$mots</td>
             <td>$encoding</td>
     </tr>" >> "$FICHIER_HTML"
 
-    echo -e "$num\t$line\t$http_code\t$mots\t$encoding" >"$FICHIER_TSV"
+    echo -e "$num\t$line\t$http_code\t$mots\t$encoding" >> "$FICHIER_TSV"
 
 done < "$FICHIER_URLS"
 
 echo -e "
 </table>
 </body>
-</html>"
+</html>" >> "$FICHIER_HTML"
 
 echo "Tableau TSV rempli : $FICHIER_TSV"
 

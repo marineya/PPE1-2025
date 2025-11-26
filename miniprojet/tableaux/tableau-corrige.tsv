@@ -1,1 +1,11 @@
-10	https://fr.wikipedia.org/wiki/Robotique	200	22057	utf-8
+num	url	http_code	mots
+1	https://fr.wikipedia.org/wiki/Robot	200	13908	UTF-8
+2	https://fr.wikipedia.org/wiki/Robot_de_cuisine	200	4133	UTF-8
+3	https://fr.wikipedia.org/wiki/Robot_d%27indexation	200	264	utf-8
+4	https://fr.wikipedia.org/wiki/Bot_informatique	200	264	utf-8
+5	https://fr.wikipedia.org/wiki/Atlas_(robot)	429	4031	utf-8
+6	https://roboty.magistry.fr	000	0	N/A
+7	https://fr.wikipedia.org/wiki/Robot_(Léonard_de_Vinci)	429	5394	utf-8
+8	https://fr.wiktionary.org/wiki/robot	429	264	utf-8
+9	https://fr.wikipedia.org/wiki/Protocole_d%27exclusion_des_robots	429	264	utf-8
+10	https://fr.wikipedia.org/wiki/Robotique	429	22057	utf-8
