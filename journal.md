@@ -908,5 +908,7 @@ Si je fais “cat” pour afficher le contenu du fichier, j'obtiens seulement le
 
 - Après avoir résolu les problèmes de code pour l'affichage du tableau et du fichier html, j'ai pris le temps de regarder la bibliothèque BUlma et d'effectuer les balises pour obtenir les deux pages.
     - quelques petits problèmes qui m'ont permis de comprendre davantage les balises et Bulma: j'essayais de comprendre pourquoi l'affichage des lignes du tableau ne s'affichait pas. Mais c'était parceque que j'avais ajouté deux balises dont : '<'table>' et '<'table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">'"." On ne peut pas ajouter plusieurs balises, celles-ci sont identiques. Ce qui signifierait qu'on ouvrirait dans ce cas deux tableaux.
+    - j'ai testé d'utilsier un bouton pour accéder à la page suivante (qui est le fichier tableau avec les urls). source pour "anche" : https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/a
+    source bibliothèque Bulma : https://bulma.io/documentation/elements/
 
 - Pour voir les deux pages html : le fichier **index_miniprojet_page_accueil.html** et le **fichier  tableau_urls_ok-1.html**
