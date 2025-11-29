@@ -720,7 +720,7 @@ Partir de nos fichiers du tableau html et rendre attrayantes les pages.
 - Page 1 On doit avoir une page attrayante (avec utilisation de Bulma) qui explique en quoi consiste le projet 1 :
 Paragraphe :
 
-"Le projet 1 consistait à créer un code ou un programme qui permettait à partir d'un fichier de relever les informations de chaque url. L'idée était de faire noter chaque informations et donc d'afficher le numéro des lignes pour chaque url.
+"Le projet 1 consistait à créer un code ou un programme qui permettait à partir d'un fichier de relever les informations de chaque url. L'idée était de faire noter chaque informations et donc d'afficher le numéro des lignes pour chaque url."
 
 On avait également un code non complet auquel nous devions transformer le chemin des urls en paramètre du script et ajouter des arguments.""
 
@@ -903,3 +903,10 @@ Si je fais “cat” pour afficher le contenu du fichier, j'obtiens seulement le
 
 
 
+### Bulma : fichier HTMl avec page d'accueil mini projet 1 + page tableau URLS :
+- Lorsque j'ai effectué les balsies en suivant la bibliothèque de BUlma, je me suis aperçu de l'inversement de ma colone "mots" et "encoding". De plus, j'ai remarqué que je n'avais pas ajouté la colone de l'encodage au début de mon code. Ce qui n'affichait pas l'entête "encoding" mais plutôt "mots" qui s'était décalée. J'ai alors modifié le fichier du code en créant une copie à partir du fichier code_tableau_corriger.sh. Le bon code que je viens de corriger et qui est correcte est le fichier code_tableau_ok.sh. A partir de ce fichier, je peux continuer à faire et suivre les instructions de Bulma. Dans le dossier Tableau, le fichier "tableau_ok-tsv" présente le tableau finale qui est correcte.
+
+- Après avoir résolu les problèmes de code pour l'affichage du tableau et du fichier html, j'ai pris le temps de regarder la bibliothèque BUlma et d'effectuer les balises pour obtenir les deux pages.
+    - quelques petits problèmes qui m'ont permis de comprendre davantage les balises et Bulma: j'essayais de comprendre pourquoi l'affichage des lignes du tableau ne s'affichait pas. Mais c'était parceque que j'avais ajouté deux balises dont : '<'table>' et '<'table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">'"." On ne peut pas ajouter plusieurs balises, celles-ci sont identiques. Ce qui signifierait qu'on ouvrirait dans ce cas deux tableaux.
+
+- Pour voir les deux pages html : le fichier **index_miniprojet_page_accueil.html** et le **fichier  tableau_urls_ok-1.html**
