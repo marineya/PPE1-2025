@@ -917,20 +917,21 @@ Si je fais “cat” pour afficher le contenu du fichier, j'obtiens seulement le
 ## Séance 10 : 03.12
 #### Travail de groupe :
 Nous avons vu :
-- pour le projet : créer 8 colones pour évoquer les informations des urls et des mots (encodage,url, code, nombre d'occurence, dump textuel, contexte, concordance.
+- pour le projet : créer 8 colones pour évoquer les informations des urls et des mots (encodage,url, code, nombre d'occurence, dump textuel, contexte, concordance.)
 
 Attendus du projet :
-• choisir mot
+• choisir un mot
 • Hypothèse de comment il est utilisé
 • Récupérer des pages sur le web (corpus par langues, 50 pages pour le mot mentionné)
-== corpus multilingue (car aucune traduction exacte, comment choisir dans d’autres lg). On l'explore avec des méthodes données les semaines passées
-- Partir du fr (lg de départ)
->réccupérer les contextes au format formel
->nuage de mot
+=> corpus multilingue (car aucune traduction exacte, comment choisir dans d’autres lg). On l'explore avec des méthodes données les semaines passées
 
-Script = permet de récupérer des données internet et la création des pages aspiré (dump textuels etc)
+- Partir du français (langue de départ)
+- réccupérer les contextes au format formel
+- nuage de mot
 
-Réccupérer les pages avec une condition
+- Script = permet de récupérer des données internet et la création des pages aspiré (dump textuels etc)
+
+- Réccupérer les pages avec une condition
 si c'est une page utf8 on extrait le texte Sinon, on fait la détection encodage et le réencodage de la page pr qu’elle soit en utf8.
 
 
@@ -943,17 +944,11 @@ si c'est une page utf8 on extrait le texte Sinon, on fait la détection encodage
 • conclusion sur l’usage commun sur le mot.
 
 
-- Moissonage :
+- Moissonage
 
-- Scripts PALS (voir le fichier PALS en faisant git pull dans dossier PPE)
+• “user agent” = (=contrôleur) information qui identifie un navigateur( chrome etc) soit les robots qui se promènent sur internet
 
-• “user agent” = (=contrôleur) info qui id un navigateur( chrome etc) soit les robots qui se promène sur internet
 • Disallow = interdir tout
-ex: Disallow : /wiki/spesial%3a : -> toutes les adresses et sous adresses de cette partie là ne foncionnera pas donc on pourra pas y accéder et on change donc de page -> si dans le tableau on met le site , c est pas pénalisé mais eviter les sites interdits et mal encoder car sinon le corpus pas top ; et si y en a ca veut dire aussi que notre script marche et c est bien mais ds ce cas faut ajouter d autres urls (voir eng 45environ à
-8min car ils expliqent cette partie lea les pe)
-éviter les moteurs de recherches = pages car sinon ca va tourner en boucle (eng suite
-mais les pages de contenus = can be indexé
-
 
 
 ## Séance 11 : 10.12
