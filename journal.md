@@ -977,5 +977,5 @@ aller dans paramètre > Danger Zone > archiver this repository> taper le nom du 
 
 
 
-*déplacement de fichier Miniporjet2 :*
+*déplacement de fichier Miniprojet2 :*
 - Par ailleurs, je me suis aperçu que je n'avais pas replacé correctement mon fichier "tableau_urls_ok.html". Ce fichier est correct et représente les URLS sous forme de tableau en format html. Je l'ai placé dans son dossier correspondant : dossier Tableaux.
