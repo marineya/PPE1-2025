@@ -919,7 +919,7 @@ Si je fais “cat” pour afficher le contenu du fichier, j'obtiens seulement le
 Nous avons vu :
 - pour le projet : créer 8 colones pour évoquer les informations des urls et des mots (encodage,url, code, nombre d'occurence, dump textuel, contexte, concordance.)
 
-Attendus du projet :
+#### Attendus du projet :
 • choisir un mot
 • Hypothèse de comment il est utilisé
 • Récupérer des pages sur le web (corpus par langues, 50 pages pour le mot mentionné)
@@ -940,7 +940,7 @@ si c'est une page utf8 on extrait le texte Sinon, on fait la détection encodage
 
 - nuage de mot avec wordcloud
 - analyse par langue
-- conclusuon globale (3 analyse , une par langue)
+- conclusion globale (3 analyse , une par langue)
 • conclusion sur l’usage commun sur le mot.
 
 
@@ -963,12 +963,13 @@ aller dans paramètre > Danger Zone > archiver this repository> taper le nom du 
 “fichier.txt | iconv -f UTF-8 -t GB2312 | iconv -f GB2312 -t
 
 -t = cible "to"
--f = from
+-f = "from"
 
 - mettre le lien de notre projet sur le tableau
 
+*avancemment travail en groupe : *
 - travail en groupe :
-    - ajouter les urls dans un fichier txt et les ajouter au fichier dans ghitbub
+    - ajouter les urls dans un fichier txt et les ajouter au fichier dans github
 
 
 
