@@ -17,7 +17,7 @@ ENsuite, j’ai bien sauvegardé la clé privée dans ̃/.ssh/id_ed25519.
 
 **Commande "unzip" : réussie :**
 
-- J’ai réussi à décompresser le fichier zip. J'ai tapé *man unzip* pour afficher en détail la commande *unzip*. J'ai obtenu pleins de fichiers différents (txt, jpeg, etc...). Au départ, je n’avais pas compris toutes les commandes et ni les différents chemins, mais en appliquant l’exercice, j’ai mieux assimilé leur fonctionnement et leur rôle sur le terminal.
+- J’ai réussi à décompresser le fichier zip. J'ai tapé *man unzip* pour afficher en détail la commande *unzip*. J'ai obtenu plein de fichiers différents (txt, jpeg, etc...). Au départ, je n’avais pas compris toutes les commandes et ni les différents chemins, mais en appliquant l’exercice, j’ai mieux assimilé leur fonctionnement et leur rôle sur le terminal.
 
 - Lors de la correction effectuée en séance 2 : Pour l'exercice 1 de la séance 1, je n'ai pas réussi à bien classer les fichiers dans le bon dossier correspondant.
 
@@ -31,10 +31,10 @@ ENsuite, j’ai bien sauvegardé la clé privée dans ̃/.ssh/id_ed25519.
 
 ls *txt il affichera seulement tous les fichiers dont le format est txt.
 
-- J'ai fais la commande mkdir pour créer le dossier auquels je crée dedans les dossiers qui contiennent les années 2016 2017 et 2018 : mkdir 2016 2017 2018 Ainsi, au sein des dossiers nommés par année, je crée des dossiers pour les mois 01 02 03 ect…
+- J'ai fait la commande mkdir pour créer le dossier auquel je crée dedans les dossiers qui contiennent les années 2016 2017 et 2018 : mkdir 2016 2017 2018 Ainsi, au sein des dossiers nommés par année, je crée des dossiers pour les mois 01 02 03 ect…
 
 - Ensuite,je fais la commande :
-- mv *txt* txt/(pour tous les fichiers txt je les deplace dans le dossier txt)
+- mv *txt* txt/(pour tous les fichiers txt je les déplace dans le dossier txt)
 - mv * 2016 * 2016/(je déplace tous les fichiers 2016 dans le dossier 2016.
 - Mv * 2016_01 * 01/ (Je déplace les fichiers 2016 dont le mois est 01 dans le dossier 01)
 - Avant de déplacer les fichiers, je m'assure d'être dans le bon dossier sinon ça affichera que les fichiers ne seront pas trouvés.
@@ -104,7 +104,7 @@ J'ai ajouté la commande echo avec des chevrons pour les exécuter sur le fichie
 
 En terminant l'exercice 1, j'ai relu l'ensemble des consignes. Je me suis aperçu que j'avais tout exécuté sur le terminal plutôt que sur le fichier sh. Je suis alors repartie sur le fichier SH pour ajouter les commandes, comme on avait vu en classe.
 
-En affichant les résutlats, je ne sais pas si c'était normal qu'ils apparaissent tous ensemble. En effet, le script SH imprimait l'ensemble de des résultats dans un seul bloc, au lieu de les afficher séparémment pour chaque année. J'ai donc modifié manuellement le fichier SH afin d'attribuer les résultats à l'année correspondante. **(voir exo1.sh)**
+En affichant les résultats, je ne sais pas si c'était normal qu'ils apparaissent tous ensemble. En effet, le script SH imprimait l'ensemble de des résultats dans un seul bloc, au lieu de les afficher séparément pour chaque année. J'ai donc modifié manuellement le fichier SH afin d'attribuer les résultats à l'année correspondante. **(voir exo1.sh)**
 
 Pour l'exercice, je n'ai pas pu commencer les autres exercices car j'ai d'abord été bloquée pour les premiers exercices. Nous avons poursuivit une correction (dans la séance suivante).
 
@@ -122,7 +122,7 @@ Les résultats se sont bien affichés sur le terminal.
 - correction exo2b :
     -  kate nomdufichier.sh
     - prendre en argument année , mois et un certain nombre de lieux à afficher.
-    - il y a une etape avant : cat ici
+    - il y a une étape avant : cat ici
     - cat/2016/2016 cf marine
 
 -  si on fait cut -f1 (f pour colonne et 1 pour le num de la colonne ici c est 1
@@ -145,16 +145,16 @@ rt | uniq -c | sort -n | tail -n 12
     - Rotterdam
     - etc...
 
- -  $ on remplace aussi sur le chemin = on transforme la commande en varaible.
+ -  $ on remplace aussi sur le chemin = on transforme la commande en variable.
 
-    -La commande va afficher tous contenus des fichiers dont les noms commenceront par 2016 et finiront par ann, dans le dossier 2016. Ensuite, il va chercher et garder toutes les lignes contenant le mot Location, puis coupe chaque ligne et sépare en 3 colones (-f3).  cat 2016/2016*ann | grep Location | cut -f3. On a :
+    -La commande va afficher tous contenus des fichiers dont les noms commenceront par 2016 et finiront par ann, dans le dossier 2016. Ensuite, il va chercher et garder toutes les lignes contenant le mot Location, puis coupe chaque ligne et sépare en 3 colonnes (-f3).  cat 2016/2016*ann | grep Location | cut -f3. On a :
         - Etats-Unis
         - Chili
         - Montpellier
         - Chine
         - etc...
 
-    - Affiche que la 3e colone des lignes contenant le mot Location et affiche le nombre d'apparition pour chaque valeur, du plus petit au plus grand (triage que par nombre d'occurence) : cat 2016/2016*ann | grep Location | cut -f3 | sort | uniq -c | sort -n. On a :
+    - Affiche que la 3e colonne des lignes contenant le mot Location et affiche le nombre d'apparitions pour chaque valeur, du plus petit au plus grand (triage que par nombre d'occurences) : cat 2016/2016*ann | grep Location | cut -f3 | sort | uniq -c | sort -n. On a :
         - ...
         - 1 Zone euro
         - 1 Zurich
@@ -193,7 +193,7 @@ Etant bloquée pour les premiers exercices, je n'ai pas pu faire les boucles.
 
 **Exercice 1**
 **Question 1)**
- “cat” est la commande qui permet d’afficher tout le contenu. Je pense qu’il va juste afficher le contenu mais et va passer dans un autre tube, c’est-à-dire un autre pipeline (d'où le | ), il va l’afficher mais après ne va pas prendre en compte la condition ou ce qui a été affiché.
+ “cat” est la commande qui permet d’afficher tout le contenu. Je pense qu’il va juste afficher le contenu et va passer dans un autre tube, c’est-à-dire un autre pipeline (d'où le | ), il va l’afficher mais après ne va pas prendre en compte la condition ou ce qui a été affiché.
 
 ***Question 2)***
 Je me base à partir du code qu’on avait corrigé  (cf exo 4).
@@ -248,7 +248,7 @@ done <"$line"
 
 **Question 3)**
 - Au départ, j’ai ajouté dans le script : wc ../urls/testfr.txt
-Lorsque je l’ai exécuté sur le terminal, j’ai obtenu les informations sur le fichier tels que le nombre de mots, de lignes.
+Lorsque je l’ai exécuté sur le terminal, j’ai obtenu les informations sur le fichier tel que le nombre de mots, de lignes.
 
 - J’ai ensuite essayé de noter :
 cat ../urls/testfr*.txt | grep -n https | cut -f2 | trail -n 10
@@ -256,7 +256,7 @@ cat ../urls/testfr*.txt | grep -n https | cut -f2 | trail -n 10
 - J’ai tenté d’ajouter ce code ici : dans la boucle while :  cat ../urls/testfr*.txt | grep -n https
 mais quand je tape ceci, évidemment la boucle se répète donc j’ai la boucle qui est répétée.
 
-- Comme on sait qu’on doit afficher des données, j’ai regardé avec la commande “cat”, car on sait qu'avec cette commande on a pu afficher avec la pipe wc, les nombre de lignes, de mots, de caractères. Donc, on applique : “man cat “. On obtient plusieurs options dont : “-n, --number number all output lines”.
+- Comme on sait qu’on doit afficher des données, j’ai regardé avec la commande “cat”, car on sait qu'avec cette commande on a pu afficher avec la pipe wc, les nombres de lignes, de mots, de caractères. Donc, on applique : “man cat “. On obtient plusieurs options dont : “-n, --number number all output lines”.
 Alors, j’ai ajouté echo cat -n ${line} dans le script. J’obtenais alors cat -n avec les urls, sur le terminal.
 Je me suis aperçu qu’il ne fallait pas le placer dans la commande “echo”. J’ai alors déplacé la commande “cat”. Ce qui m’a donné le programme suivant :
 
@@ -378,35 +378,36 @@ atgAqgM19mmKv9sPyrEBBYl2b4f7bF_aem_iDj8FgjwAgPTtCjbyeqpbA)
 
 
 **Problème de git commit et de git tag**
-- Lundi, j'ai terminé les exercices (sans créer le git tag). Pendant les deux jours suivant, j'ai quand même essayé de comprendre pourquoi les informations ne voualient pas s'aligner dans mon tableau tsv. Mais, je n'ai pas réussi malgré les modifications apportés au programme.
-- Ensuite, lorsque j'ai ajouté le git tag **"miniprojet-1-1"**, il n'a pas pris en compte les modifications effectués durant ces deux jours. Il n'a tenu compte de seulement les exercices que j'avais fait lundi (voir les anciens commit "journal à jour" dans le fichier journal.md et le commit "hh" du fichier miniprojet.sh).
+- Lundi, j'ai terminé les exercices (sans créer le git tag). Pendant les deux jours suivant, j'ai quand même essayé de comprendre pourquoi les informations ne voulaient pas s'aligner dans mon tableau tsv. Mais, je n'ai pas réussi malgré les modifications apportées au programme.
+- Ensuite, lorsque j'ai ajouté le git tag **"miniprojet-1-1"**, il n'a pas pris en compte les modifications effectuées durant ces deux jours. Il n'a tenu compte de seulement les exercices que j'avais faits lundi (voir les anciens commit "journal à jour" dans le fichier journal.md et le commit "hh" du fichier miniprojet.sh).
 J'ai dû recréer un git tag (voir le tag **"miniprojet--1"**) et faire un git add du dossier miniprojet afin de mettre à jour les modifications. J'ai ensuite supprimé l'ancien tag miniprojet-1-1, pour éviter toute confusion.
 _______________________________________________
 ## Correction miniprojet 1 (en séance 6) :
 - Q1.J’ai mieux compris que cat est plus utilisé les éléments vont être séparé par des espaces , mais ils comptent les séparateurs comme de mots.
-    - Lorsqu'on fait une boucle for sur la commande cat, les élément séparé par des espaces vont être compter comme des séparateurs de mots comme si on disait for element in "Je suis un fichier" cat et for sont moins indiqués que while read.
+    - Lorsqu'on fait une boucle for sur la commande cat, les élément séparés par des espaces vont être compter comme des séparateurs de mots comme si on disait for element in "Je suis un fichier" cat et for sont moins indiqués que while read.
     - Pour echo : il n'y a pas de séparation il met à la ligne juste les mots contrairement à cat qui sépare les valeurs (soit les mots) avec les espaces. Il ne faut alors pas utiliser for avec cat.
 
 - Q2.en faisant la correction, ‘j’ai gardé le chemin dans le nom des arguments, il faut le refaire (recréer un tag)
 car plus tard, on traitera plusieurs fichier urls par langue
 
 - Correction exercice 2 :
-    - code http, certaines erreurs peuvent être corrigées.
+    - code http, certaines erreurs peuvent être corrigés.
     - l’encodage de la page présent, nombre de mots dans la page
 
-->utiliser une redirection pour la ligne 6 est un problème, il ne pouvait pas se corriger (le problème est coté serveur) car ça indiquait 500.
+->utiliser une redirection pour la ligne 6 est un problème, il ne pouvait pas se corriger (le problème est côté serveur) car ça indiquait 500.
 
 --> Mais, j’avais affiché que les codes avec https
 
 - les commandes \ et * qui sont différentes en expression régulière et en bash.
 - ne pas mettre d’espace dans nos fichiers = pour éviter d‘avoir des erreurs (éviter espaces) erreur 429 voir 30.00
 
-- Avec la correction, il ne faut pas garder urls/txt en argument et donc ne pas garder en variable globale du script. Le but c’était d'avoir des arguments au script et ensuite ajouter les argments. Pour cela, il faut vérifier qu’on a bien donné des arguments.
-- Au départ, dans le projet 1, j'avais effectué les commandes nok et ok pour verrifier si les urls étaient valables. Mais, je l'ai fait pour une autre question qui ne le demandais pas. Mais, le faire en amont m'a permis de voir tout de même, les urls valides.
+- Avec la correction, il ne faut pas garder urls/txt en argument et donc ne pas garder en variable globale du script. Le but c’était d'avoir des arguments au script et ensuite ajouter les arguments. Pour cela, il faut vérifier qu’on a bien donné des arguments.
 
-- On vérifie les nombre d'arguments avec : if [ $#-ne 1 ]
+- Au départ, dans le projet 1, j'avais effectué les commandes nok et ok pour vérifier si les urls étaient valables. Mais, je l'ai fait pour une autre question qui ne le demandait pas. Mais, le faire en amont m'a permis de voir tout de même, les urls valides.
+
+- On vérifie les nombres d'arguments avec : if [ $#-ne 1 ]
     - quand on rajoute le test ici dans if [! -f $1 double quote ..
-    - on test si on a bien un arg (argument) -> on a un argument
+    - on test si on a bien un argment (argument) -> on a un argument
     - on teste si cet argument n’est pas un fichier
     - donc on veut afficher et on s’arrête
 
@@ -415,51 +416,51 @@ car plus tard, on traitera plusieurs fichier urls par langue
 ## Séance 6 : En cours, nous avons vu :
 #### TEST DES CARACTERES
 - Exemple de test que nous avons fait en cours :
-    - La commande mkdir a\*isborn nous permet de créer un dossier. Mais la machine n'interprète pas l'étoile comme un carcatere spécial
+    - La commande mkdir a\*isborn nous permet de créer un dossier. Mais la machine n'interprète pas l'étoile comme un caractère spécial.
 
-    - on met des guillemets autour d un bloc de chaine pour éviter certianes erreurs comme : les mauvaises interpétation de la machine. Autre exemple : mkdir un\ dossier -
+    - on met des guillemets autour d'un bloc de chaine pour éviter certaines erreurs comme : les mauvaises interprétation de la machine. Autre exemple : mkdir un\ dossier -
 
-- Le carcatere "*" :
-    - * (etoile) : expression rég répéter le truc d’avant(indique une qté = quantifieur) vs bash = substitue-moi ce que tu arrives a trouver à la place (=indique une substitution)
+- Le caractère "*" :
+    - * (étoile) : expression régulière répéter le truc d’avant(indique une quantité = quantifieur) vs bash = substitue-moi ce que tu arrives a trouver à la place (=indique une substitution)
 	=> se ressemble mais l'interprétation est différente.
 
 - Lorsqu'on vérifie si les urls sont correctent, on passe par une correction.
 
 - On a observé que la 6e url avait une erreur de type 300. Le problème venait du serveur, on ne peut donc pas faire une correction.
 
-- Quant à l'URL 7, >il y a une erreur sur Léonard de vinci avec l’accent du "e" -> en é => ici, il fallait donc vérifier soit même.
+- Quant à l'URL 7, >il y a une erreur sur Léonard de vinci avec l’accent du "e" -> en é => ici, il fallait donc vérifier soi-même.
 
 - Pour récupérer encodage et type de contenu(charset) :
-    - étape 1 : man curl => commande manuel -w = demande a curl d'afficher l'information sur la sortie standard = ça  donne aussi des élément qu’on peut afficher, et que c'est possible de séparer la valeur par \t etc => il y a d autres façon de faire, tant qu'on a le bon résultat on pourra donc avoir comme éléments (élé) : content-type : curl I url (-> grand i)on peut réccupérer ces info avec option w : c'est-à-dire qu'à la fin, on affiche des choses dont : content type (où on voit qu'il affiche le reste :  charset utf8) pour avoir l'entête on utilise l'option -w pour dire à la machine : tu vas m'afficher, le récupérer, on fait la commande : curl -I -w “urls” ⇒ on obtient le code curl -I -w “{http_code}\n%u{content_type}urls”.
+    - étape 1 : man curl => commande manuel -w = demande a curl d'afficher l'information sur la sortie standard = ça  donne aussi des élément qu’on peut afficher, et que c'est possible de séparer la valeur par \t etc => il y a d'autres façon de faire, tant qu'on a le bon résultat on pourra donc avoir comme éléments (élé) : content-type : curl I url (-> grand i)on peut récupérer ces info avec option w : c'est-à-dire qu'à la fin, on affiche des choses dont : content type (où on voit qu'il affiche le reste :  charset utf8) pour avoir l'entête on utilise l'option -w pour dire à la machine : tu vas m'afficher, le récupérer, on fait la commande : curl -I -w “urls” ⇒ on obtient le code curl -I -w “{http_code}\n%u{content_type}urls”.
 
 
 ### Travailler sur un corpus multilingue :
 - En cours, nous avons évoqué le travail en groupe
-- Projet de groupe : « éude du lexique de langue ( mot qui a un rayonnement intéressant =sa polysémie, intéressant à utiliser, traduction possible dans la langue, etc. par ex dans tel mot, en langue x ca donne se sens là et dans y langue on a autre chose comme sens).
+- Projet de groupe : « étude du lexique de langue ( mot qui a un rayonnement intéressant =sa polysémie, intéressant à utiliser, traduction possible dans la langue, etc. par ex dans tel mot, en langue x ça donne ce sens là et dans y langue on a autre chose comme sens).
 - Chaque groupe occupera une partie.
 - Etape 1 : choisir un mot (pas trop rare) qui a une polysémie.
 - Etape 2 : constituer le corpus sous forme de de liste url qui représentent/parle du mot. 50 urls par personne du groupe.
 - Etape 3 : analyse des données récoltées.
-- Rendu final : site internet qui fera un rapport sur ce qu'on a pu récolté, les démarches, les analyses, hypothèses, conclusions.
+- Rendu final : site internet qui fera un rapport sur ce qu'on a pu récolter, les démarches, les analyses, hypothèses, conclusions.
 
 
 #### Cours sur le Miniprojet 2 :
 - Nous avons abordé les notions de balisage, de html.
-- Définir html : langage qui permet de structurer des informations d’une page pr la rendre visible. On balise du contenu dans un contenu textuel.
+- Définir html : langage qui permet de structurer des informations d’une page pour la rendre visible. On balise du contenu dans un contenu textuel.
 - Balisage : marqueur de début et de fin.On a du texte et on note des zones dedans.
     -  Balises : ouvrante, fermante et auto fermantes ou vide <balise/>
-    - <br> : balise br qui est autofermante car il y a un nombre de balise limité et il n'y a pas besoin de \ .
-    - Attributs d une balise (noeuds) : clé/valeur renseignés sur la  balise ouvrante ou autofermante : ces balises ont des attribut (ex : page web) , on réccupère différents attributs (code http=valeur de 200 300 etc, charset utf8; iso, koi-8 etc)ces attributs sont dans la balise ouvrante ex : chat dort <NP fct = “SUJ”etc<SENT> : phrase qui va commencer et qui aura un noyau verbale et a l interieur il aura det, n. Dans la balise NP, on aura d'autres choses a l'intérieur.
+    - <br> : balise br qui est auto-fermante car il y a un nombre de balise limité et il n'y a pas besoin de \ .
+    - Attributs d'une balise (noeuds) : clé/valeur renseignés sur la  balise ouvrante ou auto-fermante : ces balises ont des attributs (ex : page web) , on récupère différents attributs (code http=valeur de 200 300 etc, charset utf8; iso, koi-8 etc)ces attributs sont dans la balise ouvrante ex : chat dort <NP fct = “SUJ”etc<SENT> : phrase qui va commencer et qui aura un noyau verbal et à l'interieur il aura det, n. Dans la balise NP, on aura d'autres choses a l'intérieur.
 
-- Donc après avoir fait le w de l'arbre, on aura le format texte cf SL6 DU balisage, à quoi ca ressemble ? IVG : genreM : masuclinAucun contenu textuel sera dans <head> !entete head ce qui peut ns intéresser : l'encodage charset => va être renseigné dans le head, balise méta pour métadonné, voir diapo 7 et 8 sera dans une balise méta pour métadonnée.
+- Donc après avoir fait le w de l'arbre, on aura le format texte cf SL6 DU balisage, à quoi ca ressemble ? IVG : genreM : masuclinAucun contenu textuel sera dans <head> !entête head ce qui peut ns intéresser : l'encodage charset => va être renseigné dans le head, balise méta pour métadonné, voir diapo 7 et 8 sera dans une balise méta pour métadonnée.
 - créer un tableau on a besoin de : 4 balises : table = dire qu’on est en train de créer un tableau : représente les différentes données -> il représente donc une ligne.
-- "th": représente une cellule d’entête (première ligen de notre tableau)
-- "td" : table data : une cellule qui n'est pas dans la première ligne = toutes les autres cellules qui ne sont pas dans la 1ere ligne.
+- "th": représente une cellule d’entête (première ligne de notre tableau)
+- "td" : table data : une cellule qui n'est pas dans la première ligne = toutes les autres cellules qui ne sont pas dans la 1ère ligne.
 ----------
 ## Correction Miniprojet 2
 - Etant bloquée au tableau, je n'avais pas réussi à aligner les lignes correctement sur mon tableau (revoir le code si besoin dans le fichier ex2miniprojet.sh). Alors, je n'ai pas pu faire la suite.
 
-- Correction : code pour vérifier qu’on ai des arguments : J’ai écris le chemin du fichier sur le terminal avec la commande : ./revue.sh /home/marine/Documents/-Plurital/gital/PPE1-2025/miniprojet/urls/fr.txt. Ensuite, j’obtiens le code suivant (voir fichier revue.sh) :
+- Correction : code pour vérifier qu’on ait des arguments : J’ai écrit le chemin du fichier sur le terminal avec la commande : ./revue.sh /home/marine/Documents/-Plurital/gital/PPE1-2025/miniprojet/urls/fr.txt. Ensuite, j’obtiens le code suivant (voir fichier revue.sh) :
 > if [ $# -ne 1 ] #on vérifie qu'il y ait des arguments
 then
    echo "Le script attend exactement un argument : le chemin vers le fichier d'URL"
@@ -500,7 +501,7 @@ echo "$OK URLS et $NOK lignes douteuses"
 
 - Explications de la commande :
     - curl : affiche sur le terminal, pour récupérer une page web, elle permet de récupérer des métadonnées sur la page web pour savoir si elle est valide ⇒ quel encodage avoir etc.
-    - -I : équivalent à l’option “head” on ne veut garder que les premières entêtes, sans afficher le contenu de la page.
+    - -I : équivalant à l’option “head” on ne veut garder que les premiers entêtes, sans afficher le contenu de la page.
     - -L suit les directions
     - -w = demande à curl a afficher info sur la sortie standard = ça  donne aussi des élément qu’on peut afficher, et que possible de séparer valeur par \t .
     - content_type : le type de charset.
@@ -532,10 +533,10 @@ echo "tableau tsv rempli"
 
 - Dans le terminal on exécute les commandes : ./programmes/infourls.sh urls/fr.txt tableaux/tableau-fr.tsv
 
-- J’ai donné un 2e argument au script pour afficher le tout dans un tableau tsv.
+- J’ai donné un 2ème argument au script pour afficher le tout dans un tableau tsv.
 _________________________________________
 #### Transformer en HTML :
-- J’ai essayé de faire ce script là (voir fichier codehtml.sh) pour transformer en html le tableau tsv, mais je n’ai pas compris quels étaient les problèmes : A chaque fois, j’avais toujours pas le tableau (voir fichier codehtml.sh) :
+- J’ai essayé de faire ce script-là (voir fichier codehtml.sh) pour transformer en html le tableau tsv, mais je n’ai pas compris quels étaient les problèmes : A chaque fois, j’avais toujours pas le tableau (voir fichier codehtml.sh) :
 >echo
 "'<'html'>'
 '<'head>
@@ -589,17 +590,17 @@ En faisant des recherches, sur le site https://forum.ubuntu-fr.org/viewtopic.php
 D’abord la première condition permet de voir si on a des arguments et si oui combien. Ce qui explique le $#.
 on note les arguments avec $1 et $2 pour partir d’un dossier/fichier. Lorsqu’on exécutera le code, on nommera le nom des dossier/fichiers dont on a besoin. Ensuite on imprime sans oublier le “-e” pour que la machine ne tienne pas compte des tabulations '\t' comme des simples caractères. Le chevron permet d’imprimer les informations dans un autre fichier qui va se créer.
 On ajoute le compteur “num” pour le nombre de lignes numérotées. Donc, on incrémente en ajoutant +1.
-Sur les sites https://forum.ubuntu-fr.org/viewtopic.php?id=165314, j’ai cherché à faire ignorer les tabulations (les caractères) qui sont intégrés aux urls.
+Sur les sites https://forum.ubuntu-fr.org/viewtopic.php?id=165314, j’ai cherché à faire ignorer les tabulations (les caractères) qui sont intégrées aux urls.
 
 - Ensuite, on récupère les informations des urls comme l’encodage, le nombre de mots etc.
 On a vu en cours que curl -I permettait de reprendre les différentes étapes de discussion avec un serveur.
 
-- Aavec “grep -i "Content-Type:" | tail -1 | grep -Po "charset=\S+" | cut -d"=" -f2)”, on va chercher le charset des urls. Comme certaines urls n’ont pas tous le meme charset UFT-8, on ajoute N/A.
+- Avec “grep -i "Content-Type:" | tail -1 | grep -Po "charset=\S+" | cut -d"=" -f2)”, on va chercher le charset des urls. Comme certaines urls n’ont pas tous le même charset UFT-8, on ajoute N/A.
 j’ai ajouté la commande && (source : https://steemit.com/bash/@elliotyagami/bash-difference-between-or-and-or-or-and-and-and).
 
 ### Problème : fichier code_html_corrigé :
 Je n’ai pas pu faire la suite car j’ai été bloquée au code html qui n'affichait pas malgré les balises.
-En effet, j’ai suivis la correction, mais je n’ai pas compris pourquoi le code ne fonctionnait pas :
+En effet, j’ai suivi la correction, mais je n’ai pas compris pourquoi le code ne fonctionnait pas :
 j’ai tenté de déplacer le chevron et l'argument $3 pour la transformation en html, mais je n’ai pas réussi à trouver la solution.
 >'#!/usr/bin/bash
 'if [ $# -ne 2 ]; then
@@ -662,37 +663,37 @@ echo -e "$num\t$line\t$http_code\t$mots\t$encoding" >> "$FICHIER_TSV"
 >echo "fichier html ok : $FICHIER_HTML"
 
 
-Pour le code html, on a besoin de "tab’e" pour dire qu'on est en train de créer un tableau.
+Pour le code html, on a besoin de "table" pour dire qu'on est en train de créer un tableau.
 • tr : représente les différentes données -> il représente donc une ligne.
-• th : représente une cellule d’entete (première ligne de notre tableau).
+• th : représente une cellule d’entête (première ligne de notre tableau).
 • td : table data -> une cellule qui n'est pas dans la premier ligne.
 
 En cours, nous avons évoqué les pages github.
 À partir du dépôt git : nous avons mis le fichier index.html dans index à la racine du dépôt.
 Nous l'avions téléchargé et fait git push sur git along et git cloné.
 
-On doit faire attention aux chemins = qu'ils soient toujours en relatif dnas notre dépôt
+On doit faire attention aux chemins = qu'ils soient toujours en relatif dans notre dépôt
 exemple : /home/marine, quand on déploie sur un autre utilisateur le déploiement ne marchera pas.
 
 ______________________________________________________________
 ### Pour le cours prochain :
-Nous devons construire deux pages html où les deux seront reliée ou une sera reliée .
+Nous devons construire deux pages html où les deux seront reliées ou une sera reliée .
 - construire 2 pages : page du tableau et page de l'index
 ______________________________________________________________
 
 # Séance 7 : 12.11
 - correction transformation fichier sh > fichier html
 - pages github :
-        -  Démonstration : réccupérer fichier index.html sur le dossier prof > aller sur git-along > >git add/gitcommit/git push>  à partir du depot git : mettre index.html dans index à la racine du dépôt > copier et coller puis cloner (git clone lien sh) le lien sh (sur github)> aller dans Settings> pages> cliquer sur main et sauvegarder>aller dans ACTION > attendre que ça soit vert > déploiement réussi.
-    -->  remplacer son id par nomutilistauer sur le lien
+        -  Démonstration : récupérer fichier index.html sur le dossier prof > aller sur git-along > >git add/gitcommit/git push>  à partir du dépôt git : mettre index.html dans index à la racine du dépôt > copier et coller puis cloner (git clone lien sh) le lien sh (sur github)> aller dans Settings> pages> cliquer sur main et sauvegarder>aller dans ACTION > attendre que ça soit vert > déploiement réussi.
+    -->  remplacer son identifiant par nomutilistauer sur le lien
 
 - style Bulma : créer une page d'accueil.
  - balises comme "'<'p> (paragraphe), '<'b>, '<'p style> etc..."
  - feuille de style : style.css
  - Test bulma à partir du fichier html
 
- - Rrendre attrayant :
-    • - CSS : feuille de style permet indiquer comment doit être rendu les éléments du html
+ - Rendre attrayant :
+    • - CSS : feuille de style permet d'indiquer comment doit être rendu les éléments du html
     • Dans le html, on peut ajouter du style avec : '<'p style="  ......"'>'
     • Par exemple : html
     '<'head>
@@ -720,7 +721,7 @@ Partir de nos fichiers du tableau html et rendre attrayantes les pages.
 - Page 1 On doit avoir une page attrayante (avec utilisation de Bulma) qui explique en quoi consiste le projet 1 :
 Paragraphe :
 
-"Le projet 1 consistait à créer un code ou un programme qui permettait à partir d'un fichier de relever les informations de chaque url. L'idée était de faire noter chaque informations et donc d'afficher le numéro des lignes pour chaque url."
+"Le projet 1 consistait à créer un code ou un programme qui permettait à partir d'un fichier de relever les informations de chaque url. L'idée était de faire noter chaque information et donc d'afficher le numéro des lignes pour chaque url."
 
 On avait également un code non complet auquel nous devions transformer le chemin des urls en paramètre du script et ajouter des arguments.""
 
@@ -748,7 +749,7 @@ background color white
     - j'ai effectué les commandes git :
        -  git check permet de basculer entre différentes versions
         - git reset : garde les modifications mais déplace HEAD (représente le commit sur lequel vous êtes en train de travailler) vers le commit spécifié et annule alors les modifications apportées.
-       -  git stash : on avait au début des séances déjà évoqué git stash avec des options ajoutées. Elle permettait d'appliquer des changements contenu dans un stash. dans cette commande git stash il s’agit d’enregistrer l’état actuel du répertoire de travail et de l’index mais qu’on veut revenir à un répertoire de travail propre.”https://git-scm.com/docs/git-stash/fr
+       -  git stash : on avait au début des séances déjà évoquées git stash avec des options ajoutées. Elle permettait d'appliquer des changements contenus dans un stash. dans cette commande git stash il s’agit d’enregistrer l’état actuel du répertoire de travail et de l’index mais qu’on veut revenir à un répertoire de travail propre.”https://git-scm.com/docs/git-stash/fr
 
 
 - Ex 2 : Créer un README avec un peu de contenu
@@ -785,7 +786,7 @@ and have 1 and 1 different commits each, respectively.
 
 Il faut faire ensuite git reset qui permet de faire machine arrière dans les commits entre le dépôt en ligne et votre dossier local.
 
-Après avoir fais les commandes git reset HEAD~1 (de la fiche help), le terminal affiche : "Unstaged changes after reset:"
+Après avoir faits les commandes git reset HEAD~1 (de la fiche help), le terminal affiche : "Unstaged changes after reset:"
 "M       README.md"
 Je suppose que le commit a été annulé. Il revient à la dernière version du dépôt.
 
@@ -847,7 +848,7 @@ Si je fais “cat” pour afficher le contenu du fichier, j'obtiens seulement le
 
 ## Séance 8
 
-- Expression régulières
+- Expressions régulières
     - extraction automatique
     - extraire informations dans un texte
     - rechercher, remplacer
@@ -880,7 +881,7 @@ Si je fais “cat” pour afficher le contenu du fichier, j'obtiens seulement le
     → les paquets Python sont stockés sur le PYthon Package Index (PyPI) :
     https://pypi.org.2
 
-    - installer juoyterlab (uv pip instal juoyterlab)
+    - installer jupyterlab (uv pip instal juoyterlab)
 
 - démonstration wordcloud
     - wordcloud_cli --text Documents/Plurital/PPE1-2526/docs/pg16066.txt (il affiche le contenu du fichier avec des caractères spéciaux)
