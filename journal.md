@@ -904,11 +904,12 @@ Si je fais “cat” pour afficher le contenu du fichier, j'obtiens seulement le
 
 
 ### Bulma : fichier HTMl avec page d'accueil mini projet 1 + page tableau URLS :
-- Lorsque j'ai effectué les balsies en suivant la bibliothèque de BUlma, je me suis aperçu de l'inversement de ma colone "mots" et "encoding". De plus, j'ai remarqué que je n'avais pas ajouté la colone de l'encodage au début de mon code. Ce qui n'affichait pas l'entête "encoding" mais plutôt "mots" qui s'était décalée. J'ai alors modifié le fichier du code en créant une copie à partir du fichier code_tableau_corriger.sh. Le bon code que je viens de corriger et qui est correcte est le fichier code_tableau_ok.sh. A partir de ce fichier, je peux continuer à faire et suivre les instructions de Bulma. Dans le dossier Tableau, le fichier "tableau_ok-tsv" présente le tableau finale qui est correcte.
+- Lorsque j'ai effectué les balises en suivant la bibliothèque de BUlma, je me suis aperçu de l'inversement de ma colonne "mots" et "encoding". De plus, j'ai remarqué que je n'avais pas ajouté la colonne de l'encodage au début de mon code. Ce qui n'affichait pas l'entête "encoding" mais plutôt "mots" qui s'était décalée. J'ai alors modifié le fichier du code en créant une copie à partir du fichier code_tableau_corriger.sh. Le bon code que je viens de corriger et qui est correcte est le fichier code_tableau_ok.sh. à partir de ce fichier, je peux continuer à faire et suivre les instructions de Bulma. Dans le dossier Tableau, le fichier "tableau_ok-tsv" présente le tableau finale qui est correcte.
+
 
 - Après avoir résolu les problèmes de code pour l'affichage du tableau et du fichier html, j'ai pris le temps de regarder la bibliothèque BUlma et d'effectuer les balises pour obtenir les deux pages.
     - quelques petits problèmes qui m'ont permis de comprendre davantage les balises et Bulma: j'essayais de comprendre pourquoi l'affichage des lignes du tableau ne s'affichait pas. Mais c'était parceque que j'avais ajouté deux balises dont : '<'table>' et '<'table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">'"." On ne peut pas ajouter plusieurs balises, celles-ci sont identiques. Ce qui signifierait qu'on ouvrirait dans ce cas deux tableaux.
-    - j'ai testé d'utilsier un bouton pour accéder à la page suivante (qui est le fichier tableau avec les urls). source pour "anche" : https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/a
+    - j'ai testé un bouton pour accéder à la page suivante (qui est le fichier tableau avec les urls). source pour "anche" : https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/a
     source bibliothèque Bulma : https://bulma.io/documentation/elements/
 
 - Pour voir les deux pages html : le fichier **index_miniprojet_page_accueil.html** et le **fichier  tableau_urls_ok-1.html**
@@ -917,22 +918,22 @@ Si je fais “cat” pour afficher le contenu du fichier, j'obtiens seulement le
 ## Séance 10 : 03.12
 #### Travail de groupe :
 Nous avons vu :
-- pour le projet : créer 8 colones pour évoquer les informations des urls et des mots (encodage,url, code, nombre d'occurence, dump textuel, contexte, concordance.)
+- pour le projet : créer 8 colonnes pour évoquer les informations des urls et des mots (encodage,url, code, nombre d'occurences, dump textuel, contexte, concordance.)
 
-#### Attendus du projet :
+#### Attendu du projet :
 • choisir un mot
 • Hypothèse de comment il est utilisé
 • Récupérer des pages sur le web (corpus par langues, 50 pages pour le mot mentionné)
-=> corpus multilingue (car aucune traduction exacte, comment choisir dans d’autres lg). On l'explore avec des méthodes données les semaines passées
+=> corpus multilingue (car aucune traduction exacte, comment choisir dans d’autres langue). On l'explore avec des méthodes données les semaines passées
 
 - Partir du français (langue de départ)
 - réccupérer les contextes au format formel
 - nuage de mot
 
-- Script = permet de récupérer des données internet et la création des pages aspiré (dump textuels etc)
+- Script = permet de récupérer des données internet et la création des pages aspirées (dump textuel, etc)
 
-- Réccupérer les pages avec une condition
-si c'est une page utf8 on extrait le texte Sinon, on fait la détection encodage et le réencodage de la page pr qu’elle soit en utf8.
+- Récupérer les pages avec une condition
+si c'est une page UTF-8, on extrait le texte Sinon, on fait la détection encodage et le réencodage de la page pour qu’elle soit en UTF-8.
 
 
 *Pals* :
@@ -940,22 +941,22 @@ si c'est une page utf8 on extrait le texte Sinon, on fait la détection encodage
 
 - nuage de mot avec wordcloud
 - analyse par langue
-- conclusion globale (3 analyse , une par langue)
+- conclusion globale (3 analyses , une par langue)
 • conclusion sur l’usage commun sur le mot.
 
 
-- Moissonage
+- Moissonnage
 
 • “user agent” = (=contrôleur) information qui identifie un navigateur( chrome etc) soit les robots qui se promènent sur internet
 
-• Disallow = interdir tout
+• Disallow = interdire tout
 
 
 ## Séance 11 : 10.12
 
 - Nous avons évoqué l’archivage de notre projet :
 pour ne plus faire de modifications
-aller dans paramètre > Danger Zone > archiver this repository> taper le nom du dépot
+aller dans paramètre > Danger Zone > archiver this repository> taper le nom du dépôt
 
 - conversion iconv
 --> on en aura besoin si il y a un problème d’encodage.
@@ -967,7 +968,7 @@ aller dans paramètre > Danger Zone > archiver this repository> taper le nom du 
 
 - mettre le lien de notre projet sur le tableau
 
-*avancemment travail en groupe : *
+*Avancement travail en groupe : *
 - travail en groupe :
     - ajouter les urls dans un fichier txt et les ajouter au fichier dans github
 
