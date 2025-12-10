@@ -965,6 +965,7 @@ aller dans paramètre > Danger Zone > archiver this repository> taper le nom du 
 “fichier.txt | iconv -f UTF-8 -t GB2312 | iconv -f GB2312 -t
 
 -t = cible "to"
+
 -f = "from"
 
 - mettre le lien de notre projet sur le tableau
