@@ -770,7 +770,7 @@ background color white
     pour cela, je fais : echo -e “\nLigne ajoutée” >> README.md
     - Ensuite je fais cat README.md : il affiche bien la ligne ajoutée et imprimée avec echo.
     - Puis, je fais les git add, commit, push
-- Mais, on observe après git pus, qu’il a donné une erreur. Il affiche :
+- Mais, on observe après git push, qu’il a donné une erreur. Il affiche :
 >“! [rejected]        main -> main (fetch first)
 error: failed to push some refs to 'github.com:marineya/git-along.git'
 hint: Updates were rejected because the remote contains work that you do not
@@ -979,3 +979,9 @@ aller dans paramètre > Danger Zone > archiver this repository> taper le nom du 
 
 *déplacement de fichier Miniprojet2 :*
 - Par ailleurs, je me suis aperçu que je n'avais pas replacé correctement mon fichier "tableau_urls_ok.html". Ce fichier est correct et représente les URLS sous forme de tableau en format html. Je l'ai placé dans son dossier correspondant : dossier Tableaux.
+
+
+## Séance 12 :
+- Travaux en groupe :
+- continuité dans les recherches URLS
+- création du code pour la page présentation des étudiants
