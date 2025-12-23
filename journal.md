@@ -985,3 +985,9 @@ aller dans paramètre > Danger Zone > archiver this repository> taper le nom du 
 - Travaux en groupe :
 - continuité dans les recherches URLS
 - création du code pour la page présentation des étudiants
+
+
+## Avancé du projet de groupe, coté individuel :
+- Avant de commit sur le dossier du groupe, j'ai d'abord fait le code pour la langue française dans le brouillon (git along, fichier code-fr.sh).
+
+- Lorsque j'ai fais le code, à chaque excécution du fichier code-fr.sh, il y avait la suite de toutes les urls qui s'affichaient (parfois elles reprenaient au début). Au départ, j'ai cherché si le problème n'était pas la répétition de ce que j'avais déjà noté (c'est-à-dire le code réécris en deux fois). J'ai vérifié sur le script des professeur et sur celui que j'avais fait pour le mini-projet. Le problème venait du chevron. J'avais écris à la suite en utilisant un seul chevron pour l'impression dans le fichier.
