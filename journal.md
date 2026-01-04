@@ -991,3 +991,56 @@ aller dans paramètre > Danger Zone > archiver this repository> taper le nom du 
 - Avant de commit sur le dossier du groupe, j'ai d'abord fait le code pour la langue française dans le brouillon (git along, fichier code-fr.sh).
 
 - Lorsque j'ai fais le code, à chaque excécution du fichier code-fr.sh, il y avait la suite de toutes les urls qui s'affichaient (parfois elles reprenaient au début). Au départ, j'ai cherché si le problème n'était pas la répétition de ce que j'avais déjà noté (c'est-à-dire le code réécris en deux fois). J'ai vérifié sur le script des professeur et sur celui que j'avais fait pour le mini-projet. Le problème venait du chevron. J'avais écris à la suite en utilisant un seul chevron pour l'impression dans le fichier.
+
+## quelques problèmes :
+Pour les aspirations, j’ai écrit le code, mais il affichait seulement un seul fichier contenant à chaque fois une url en deux fois. la commande curl n’avait pas fonctionné. J’avais noté dans le code ceci : <p>URL : $line</p>
+
+                        curl -s $line
+
+Mais, je pense que la commande curl n’a pas été effectuée puisqu’elle n’a affiché : “curl -s exemple_url”.
+
+Donc, j’ai tenté de regarder et je pense que le problème venait de la variable num car je devais avoir plusieurs fichiers avec dans chacune d’elle, son url aspirée.
+
+Je me suis alors référée à mon code de miniprojet que j’avais fait pour voir l’incrémentation.
+
+Donc, j’ai modifié en : num=$(expr $num + 1)
+
+plutôt que num=+1.
+
+Donc, en exécutant, j’ai pu avoir enfin tous les fichiers urls mais la commande curl ne s’est pas affichée. Après avoir cherché le problème..
+
+ j’ai découvert que j'avais placé curl dans echo donc il ne vas pas prendre en compte la commande. ALors, j’ai tenté de mettre la commande curl dans une variable pour pouvoir l'utiliser comme $line.
+
+
+ mais le terminal m’affichait :
+
+curl: (2) no URL specified
+
+curl: try 'curl --help' or 'curl --manual' for more information
+
+curl: (2) no URL specified
+
+curl: try 'curl --help' or 'curl --manual' for more information
+
+Etc…
+
+J’ai alors créé la variable pour curl :  curl_url=$(curl -s "$line")
+
+ainsi, j’ai eu les résultats, mais de ce que je pouvais voir, rien ne changeait. J’avais le lien de l”url mais aussi tout son contenu. Pour certains, ça n’affichait pas tout son contenu mais parfois son contenu sous forme de caractères diacrités. en tout cas pour certaines url, c’était affiché différemment de l'url originale ou alors c’était identique. J’ai alors recherché si je pouvais ajouter d’autres options pour curl. Mais le problème y était toujours. j'ai alors observé les urls et le problème venait sûrement d'elles. C'est pour cette raison que j'ai ensuite changé les urls qui posaient problème. Ensuite, tout semblait fonctionner. J'ai testé les urls qui ne fonctionnaient pas sur le terminal également mais ça ne s'affichait pas non plus.
+
+après avoir fait le code pour l’aspiration, je l’ai regroupé avec le code, mais en affichant le code aspiration, j’ai pu voir qu’il affichait le chemin jusqu’à l’url aspirée. Donc, j’ai regardé sur le site https://openclassrooms.com/fr/courses/1603881-creez-votre-site-web-avec-html5-et-css3/1604646-creez-un-lien-hypertexte-en-html
+et j’ai ajouté dans les balises du tableau.
+
+Quand j'ai utilisé regex pour le contexte, ça ne fonctionnait pas. donc, quand j'ai tapé une expression régulière, il ne comprenait pas que c’est une ER, donc j’ai regardé sur quelques sources pr savoir comment l'utiliser :
+
+#PCRE (Perl Compatible Regular Expression) vous permet de faire bien plus que d’écrire des expressions basiques.
+
+#https://geekflare.com/fr/grep-and-regex-explained/
+
+quand j’ai fait le script pour les concordances, je n’ai pas réussi à afficher tout le tableau concordance. il n’y avait que le titre des colonnes qui s'affichait dans les pages html. J'ai regardé si le problème concernait la construction du code html.
+
+Et parfois, je n'avais pas du tout les mêmes mots dans le contexte d'un fichier txt. Le problème était difficile à résoudre. J'avais mal défini ma boucle. Car j'avais for fichier in et la variable de mes fichiers. C'était un mauvais positionnement de mes variables donc un désordre de l'ordre de la boucle.
+
+
+
+
