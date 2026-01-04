@@ -993,9 +993,9 @@ aller dans paramètre > Danger Zone > archiver this repository> taper le nom du 
 - Lorsque j'ai fais le code, à chaque excécution du fichier code-fr.sh, il y avait la suite de toutes les urls qui s'affichaient (parfois elles reprenaient au début). Au départ, j'ai cherché si le problème n'était pas la répétition de ce que j'avais déjà noté (c'est-à-dire le code réécris en deux fois). J'ai vérifié sur le script des professeur et sur celui que j'avais fait pour le mini-projet. Le problème venait du chevron. J'avais écris à la suite en utilisant un seul chevron pour l'impression dans le fichier.
 
 ## quelques problèmes :
-Pour les aspirations, j’ai écrit le code, mais il affichait seulement un seul fichier contenant à chaque fois une url en deux fois. la commande curl n’avait pas fonctionné. J’avais noté dans le code ceci : <p>URL : $line</p>
+Pour les aspirations, j’ai écrit le code, mais il affichait seulement un seul fichier contenant à chaque fois une url en deux fois. la commande curl n’avait pas fonctionné. J’avais noté dans le code ceci : "<"p>URL : $line<""/p>"
 
-                        curl -s $line
+ "curl -s $line""
 
 Mais, je pense que la commande curl n’a pas été effectuée puisqu’elle n’a affiché : “curl -s exemple_url”.
 
@@ -1033,9 +1033,9 @@ et j’ai ajouté dans les balises du tableau.
 
 Quand j'ai utilisé regex pour le contexte, ça ne fonctionnait pas. donc, quand j'ai tapé une expression régulière, il ne comprenait pas que c’est une ER, donc j’ai regardé sur quelques sources pr savoir comment l'utiliser :
 
-#PCRE (Perl Compatible Regular Expression) vous permet de faire bien plus que d’écrire des expressions basiques.
+PCRE (Perl Compatible Regular Expression) vous permet de faire bien plus que d’écrire des expressions basiques.
 
-#https://geekflare.com/fr/grep-and-regex-explained/
+https://geekflare.com/fr/grep-and-regex-explained/
 
 quand j’ai fait le script pour les concordances, je n’ai pas réussi à afficher tout le tableau concordance. il n’y avait que le titre des colonnes qui s'affichait dans les pages html. J'ai regardé si le problème concernait la construction du code html.
 
